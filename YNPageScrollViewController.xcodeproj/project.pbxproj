@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E4720BA1D407A070063CEB9 /* UIHomeViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */; };
+		2EA142921D3E0F87002C75DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142911D3E0F87002C75DE /* main.m */; };
+		2EA142951D3E0F87002C75DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142941D3E0F87002C75DE /* AppDelegate.m */; };
+		2EA142981D3E0F87002C75DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142971D3E0F87002C75DE /* ViewController.m */; };
+		2EA1429B1D3E0F87002C75DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA142991D3E0F87002C75DE /* Main.storyboard */; };
+		2EA1429D1D3E0F87002C75DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429C1D3E0F87002C75DE /* Assets.xcassets */; };
+		2EA142A01D3E0F87002C75DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */; };
+		2EA142AF1D3E1324002C75DE /* YNBanTangDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */; };
+		2EA142B21D3E135F002C75DE /* YNJianShuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */; };
+		2EA142B51D3E1392002C75DE /* YNNavStyleViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */; };
+		2EA142B81D3E13CF002C75DE /* YNTopStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */; };
+		2EA142BB1D3E15B3002C75DE /* YNPageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */; };
+		2EA142BE1D3E15BD002C75DE /* YNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */; };
+		2EA142C11D3E15CC002C75DE /* UIView+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */; };
+		2EA142C61D3E15E3002C75DE /* YNPageScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */; };
+		2EA142C71D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */; };
+		2EA142CB1D3E183C002C75DE /* YNTestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */; };
+		2EA142CE1D3E18EE002C75DE /* YNTestOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */; };
+		2EA142D11D3E191A002C75DE /* YNTestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */; };
+		2EA142D41D3E1943002C75DE /* YNTestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */; };
+		2EA142D71D3E1974002C75DE /* YNTestFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */; };
+		D0E53006C639CA702E202C41 /* libPods-YNPageScrollViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 831D0D88B14185798ABD1CF9 /* libPods-YNPageScrollViewController.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E4720B81D407A070063CEB9 /* UIHomeViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeViewControler.h; sourceTree = "<group>"; };
+		2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeViewControler.m; sourceTree = "<group>"; };
+		2EA1428D1D3E0F87002C75DE /* YNPageScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNPageScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA142911D3E0F87002C75DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EA142931D3E0F87002C75DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2EA142941D3E0F87002C75DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2EA142961D3E0F87002C75DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2EA142971D3E0F87002C75DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2EA1429A1D3E0F87002C75DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2EA1429C1D3E0F87002C75DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EA1429F1D3E0F87002C75DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EA142A11D3E0F87002C75DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA142AD1D3E1324002C75DE /* YNBanTangDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNBanTangDemoViewController.h; sourceTree = "<group>"; };
+		2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNBanTangDemoViewController.m; sourceTree = "<group>"; };
+		2EA142B01D3E135F002C75DE /* YNJianShuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNJianShuDemoViewController.h; sourceTree = "<group>"; };
+		2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNJianShuDemoViewController.m; sourceTree = "<group>"; };
+		2EA142B31D3E1392002C75DE /* YNNavStyleViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNNavStyleViewDemoViewController.h; sourceTree = "<group>"; };
+		2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNNavStyleViewDemoViewController.m; sourceTree = "<group>"; };
+		2EA142B61D3E13CF002C75DE /* YNTopStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTopStyleViewController.h; sourceTree = "<group>"; };
+		2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTopStyleViewController.m; sourceTree = "<group>"; };
+		2EA142B91D3E15B3002C75DE /* YNPageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewController.h; sourceTree = "<group>"; };
+		2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewController.m; sourceTree = "<group>"; };
+		2EA142BC1D3E15BD002C75DE /* YNPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollView.h; sourceTree = "<group>"; };
+		2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollView.m; sourceTree = "<group>"; };
+		2EA142BF1D3E15CC002C75DE /* UIView+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YNCategory.h"; sourceTree = "<group>"; };
+		2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YNCategory.m"; sourceTree = "<group>"; };
+		2EA142C21D3E15E3002C75DE /* YNPageScrollViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenu.h; sourceTree = "<group>"; };
+		2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenu.m; sourceTree = "<group>"; };
+		2EA142C41D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenuConfigration.h; sourceTree = "<group>"; };
+		2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenuConfigration.m; sourceTree = "<group>"; };
+		2EA142C91D3E183C002C75DE /* YNTestBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestBaseViewController.h; sourceTree = "<group>"; };
+		2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestBaseViewController.m; sourceTree = "<group>"; };
+		2EA142CC1D3E18EE002C75DE /* YNTestOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestOneViewController.h; sourceTree = "<group>"; };
+		2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestOneViewController.m; sourceTree = "<group>"; };
+		2EA142CF1D3E191A002C75DE /* YNTestTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestTwoViewController.h; sourceTree = "<group>"; };
+		2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestTwoViewController.m; sourceTree = "<group>"; };
+		2EA142D21D3E1943002C75DE /* YNTestThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestThreeViewController.h; sourceTree = "<group>"; };
+		2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestThreeViewController.m; sourceTree = "<group>"; };
+		2EA142D51D3E1974002C75DE /* YNTestFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestFourViewController.h; sourceTree = "<group>"; };
+		2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestFourViewController.m; sourceTree = "<group>"; };
+		498AF6E6D8EFFB9A6C961023 /* Pods-YNPageScrollViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNPageScrollViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		831D0D88B14185798ABD1CF9 /* libPods-YNPageScrollViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNPageScrollViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB826A097F7588AFF7E2E0B5 /* Pods-YNPageScrollViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNPageScrollViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EA1428A1D3E0F87002C75DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E53006C639CA702E202C41 /* libPods-YNPageScrollViewController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EA142841D3E0F87002C75DE = {
+			isa = PBXGroup;
+			children = (
+				2EA1428F1D3E0F87002C75DE /* YNPageScrollViewController */,
+				2EA1428E1D3E0F87002C75DE /* Products */,
+				3E316DF0DEA7EE4AF41355F0 /* Pods */,
+				DC63732603C0144DE0F0B287 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2EA1428E1D3E0F87002C75DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EA1428D1D3E0F87002C75DE /* YNPageScrollViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EA1428F1D3E0F87002C75DE /* YNPageScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142A71D3E1118002C75DE /* Libs */,
+				2EA142A91D3E1131002C75DE /* Demo */,
+				2EA142931D3E0F87002C75DE /* AppDelegate.h */,
+				2EA142941D3E0F87002C75DE /* AppDelegate.m */,
+				2EA142961D3E0F87002C75DE /* ViewController.h */,
+				2EA142971D3E0F87002C75DE /* ViewController.m */,
+				2E4720B81D407A070063CEB9 /* UIHomeViewControler.h */,
+				2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */,
+				2EA142991D3E0F87002C75DE /* Main.storyboard */,
+				2EA1429C1D3E0F87002C75DE /* Assets.xcassets */,
+				2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */,
+				2EA142A11D3E0F87002C75DE /* Info.plist */,
+				2EA142901D3E0F87002C75DE /* Supporting Files */,
+			);
+			path = YNPageScrollViewController;
+			sourceTree = "<group>";
+		};
+		2EA142901D3E0F87002C75DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142911D3E0F87002C75DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EA142A71D3E1118002C75DE /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142A81D3E1118002C75DE /* YNPageScrollViewController */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		2EA142A81D3E1118002C75DE /* YNPageScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142B91D3E15B3002C75DE /* YNPageScrollViewController.h */,
+				2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */,
+				2EA142BC1D3E15BD002C75DE /* YNPageScrollView.h */,
+				2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */,
+				2EA142BF1D3E15CC002C75DE /* UIView+YNCategory.h */,
+				2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */,
+				2EA142C21D3E15E3002C75DE /* YNPageScrollViewMenu.h */,
+				2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */,
+				2EA142C41D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.h */,
+				2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */,
+			);
+			path = YNPageScrollViewController;
+			sourceTree = "<group>";
+		};
+		2EA142A91D3E1131002C75DE /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142C81D3E1819002C75DE /* TestViewController */,
+				2EA142AD1D3E1324002C75DE /* YNBanTangDemoViewController.h */,
+				2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */,
+				2EA142B01D3E135F002C75DE /* YNJianShuDemoViewController.h */,
+				2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */,
+				2EA142B31D3E1392002C75DE /* YNNavStyleViewDemoViewController.h */,
+				2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */,
+				2EA142B61D3E13CF002C75DE /* YNTopStyleViewController.h */,
+				2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		2EA142C81D3E1819002C75DE /* TestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EA142C91D3E183C002C75DE /* YNTestBaseViewController.h */,
+				2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */,
+				2EA142CC1D3E18EE002C75DE /* YNTestOneViewController.h */,
+				2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */,
+				2EA142CF1D3E191A002C75DE /* YNTestTwoViewController.h */,
+				2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */,
+				2EA142D21D3E1943002C75DE /* YNTestThreeViewController.h */,
+				2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */,
+				2EA142D51D3E1974002C75DE /* YNTestFourViewController.h */,
+				2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */,
+			);
+			path = TestViewController;
+			sourceTree = "<group>";
+		};
+		3E316DF0DEA7EE4AF41355F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				498AF6E6D8EFFB9A6C961023 /* Pods-YNPageScrollViewController.debug.xcconfig */,
+				DB826A097F7588AFF7E2E0B5 /* Pods-YNPageScrollViewController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC63732603C0144DE0F0B287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				831D0D88B14185798ABD1CF9 /* libPods-YNPageScrollViewController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EA1428C1D3E0F87002C75DE /* YNPageScrollViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA142A41D3E0F87002C75DE /* Build configuration list for PBXNativeTarget "YNPageScrollViewController" */;
+			buildPhases = (
+				0F809F662B496706089E50A3 /* [CP] Check Pods Manifest.lock */,
+				2EA142891D3E0F87002C75DE /* Sources */,
+				2EA1428A1D3E0F87002C75DE /* Frameworks */,
+				2EA1428B1D3E0F87002C75DE /* Resources */,
+				FF244111AFB561C4551099B6 /* [CP] Embed Pods Frameworks */,
+				60D9BAB0421AB0E7B5D1EF6B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YNPageScrollViewController;
+			productName = YNPageScrollViewController;
+			productReference = 2EA1428D1D3E0F87002C75DE /* YNPageScrollViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EA142851D3E0F87002C75DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Yongneng Zheng";
+				TargetAttributes = {
+					2EA1428C1D3E0F87002C75DE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2EA142881D3E0F87002C75DE /* Build configuration list for PBXProject "YNPageScrollViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EA142841D3E0F87002C75DE;
+			productRefGroup = 2EA1428E1D3E0F87002C75DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EA1428C1D3E0F87002C75DE /* YNPageScrollViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EA1428B1D3E0F87002C75DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA142A01D3E0F87002C75DE /* LaunchScreen.storyboard in Resources */,
+				2EA1429D1D3E0F87002C75DE /* Assets.xcassets in Resources */,
+				2EA1429B1D3E0F87002C75DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F809F662B496706089E50A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60D9BAB0421AB0E7B5D1EF6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF244111AFB561C4551099B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EA142891D3E0F87002C75DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA142B81D3E13CF002C75DE /* YNTopStyleViewController.m in Sources */,
+				2EA142BB1D3E15B3002C75DE /* YNPageScrollViewController.m in Sources */,
+				2E4720BA1D407A070063CEB9 /* UIHomeViewControler.m in Sources */,
+				2EA142BE1D3E15BD002C75DE /* YNPageScrollView.m in Sources */,
+				2EA142981D3E0F87002C75DE /* ViewController.m in Sources */,
+				2EA142D41D3E1943002C75DE /* YNTestThreeViewController.m in Sources */,
+				2EA142951D3E0F87002C75DE /* AppDelegate.m in Sources */,
+				2EA142D71D3E1974002C75DE /* YNTestFourViewController.m in Sources */,
+				2EA142CB1D3E183C002C75DE /* YNTestBaseViewController.m in Sources */,
+				2EA142B21D3E135F002C75DE /* YNJianShuDemoViewController.m in Sources */,
+				2EA142B51D3E1392002C75DE /* YNNavStyleViewDemoViewController.m in Sources */,
+				2EA142D11D3E191A002C75DE /* YNTestTwoViewController.m in Sources */,
+				2EA142C71D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m in Sources */,
+				2EA142AF1D3E1324002C75DE /* YNBanTangDemoViewController.m in Sources */,
+				2EA142CE1D3E18EE002C75DE /* YNTestOneViewController.m in Sources */,
+				2EA142C11D3E15CC002C75DE /* UIView+YNCategory.m in Sources */,
+				2EA142921D3E0F87002C75DE /* main.m in Sources */,
+				2EA142C61D3E15E3002C75DE /* YNPageScrollViewMenu.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2EA142991D3E0F87002C75DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EA1429A1D3E0F87002C75DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EA1429F1D3E0F87002C75DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2EA142A21D3E0F87002C75DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2EA142A31D3E0F87002C75DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EA142A51D3E0F87002C75DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498AF6E6D8EFFB9A6C961023 /* Pods-YNPageScrollViewController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = YNPageScrollViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yn.YNPageScrollViewController2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		2EA142A61D3E0F87002C75DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB826A097F7588AFF7E2E0B5 /* Pods-YNPageScrollViewController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = YNPageScrollViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yn.YNPageScrollViewController2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EA142881D3E0F87002C75DE /* Build configuration list for PBXProject "YNPageScrollViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA142A21D3E0F87002C75DE /* Debug */,
+				2EA142A31D3E0F87002C75DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA142A41D3E0F87002C75DE /* Build configuration list for PBXNativeTarget "YNPageScrollViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA142A51D3E0F87002C75DE /* Debug */,
+				2EA142A61D3E0F87002C75DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EA142851D3E0F87002C75DE /* Project object */;
+}
