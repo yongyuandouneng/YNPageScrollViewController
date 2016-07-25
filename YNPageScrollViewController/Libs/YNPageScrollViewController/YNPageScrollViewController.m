@@ -326,8 +326,9 @@
             CGFloat deltaHeight = (self.navigationController.navigationBar.isTranslucent||!self.configration.showNavigation) ? 64 : 0;
             
             if (self.scrollViewMenu.yn_y > deltaHeight) {
+                self.scrollViewMenu.yn_y = 150;
                 
-                self.scrollViewMenu.yn_y = self.bigHeaderView.yn_height - self.configration.menuHeight + deltaHeight;
+                NSLog(@"%f",self.scrollViewMenu.yn_y);
                 [[NSNotificationCenter defaultCenter] postNotificationName:YNNotificationUpdateTableViewRefresh object:nil];
             }
         }

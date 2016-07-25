@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewController.m"
-            timestampString = "490772967.323876"
+            timestampString = "490812896.134538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "-updateSubViewScrollViewContentInset"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewController.m"
-            timestampString = "490772967.323876"
+            timestampString = "490812896.134538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "-updateSubViewScrollViewContentInset"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewController.m"
-            timestampString = "490772967.323876"
+            timestampString = "490812896.134538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
             landmarkName = "-updateSubViewScrollViewContentInset"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Demo/TestViewController/YNTestBaseViewController.m"
-            timestampString = "490765030.544923"
+            timestampString = "491071560.794946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-tableView"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Demo/TestViewController/YNTestBaseViewController.m"
-            timestampString = "490765030.544923"
+            timestampString = "491071560.794946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Demo/TestViewController/YNTestBaseViewController.m"
-            timestampString = "490765030.544923"
+            timestampString = "491071560.794946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-tableView"
             landmarkType = "5">
          </BreakpointContent>
@@ -691,14 +691,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewController.m"
-            timestampString = "490772967.323876"
+            filePath = "YNPageScrollViewController/main.m"
+            timestampString = "490812759.225598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
-            landmarkName = "-pageScrollViewMenuItemOnClick:index:"
-            landmarkType = "5">
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "main()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

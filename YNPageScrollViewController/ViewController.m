@@ -174,7 +174,7 @@
 - (UIViewController *)getNavStyleViewDemoViewController{
     
     
-    //配置信息
+    //配置信息s
     YNPageScrollViewMenuConfigration *configration = [[YNPageScrollViewMenuConfigration alloc]init];
     configration.scrollViewBackgroundColor = [UIColor redColor];
     configration.itemLeftAndRightMargin = 30;

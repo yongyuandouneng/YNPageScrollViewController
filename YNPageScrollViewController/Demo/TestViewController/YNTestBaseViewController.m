@@ -26,10 +26,13 @@ NSInteger viewcontroller_type = 1;
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    
-    for (int i = 0; i < 20; i++) {
-        [self.datasArrayM addObject:[NSString stringWithFormat:@" 原始数据 %zd",i]];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        for (int i = 0; i < 20; i++) {
+            [self.datasArrayM addObject:[NSString stringWithFormat:@" 原始数据 %zd",i]];
+        }
+        [self.tableView reloadData];
+    });
     
     [self.view addSubview:self.tableView];
     //监听通知 在滑动和选中的时候关闭刷新状态 数据仍然在后台加载
