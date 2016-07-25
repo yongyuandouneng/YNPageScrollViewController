@@ -30,20 +30,19 @@
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
-
 @end
 
 
 @implementation YNPageScrollViewMenu
 
-+ (instancetype)pageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate{
++ (instancetype)pageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate currentIndex:(NSInteger)currentIndex{
 
-   return [[YNPageScrollViewMenu alloc] initPageScrollViewMenuWithFrame:frame titles:titlesArray Configration:configration delegate:delegate];
+   return [[YNPageScrollViewMenu alloc] initPageScrollViewMenuWithFrame:frame titles:titlesArray Configration:configration delegate:delegate currentIndex:currentIndex];
 
 }
 
-- (instancetype)initPageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate{
-    
+- (instancetype)initPageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate currentIndex:(NSInteger)currentIndex{
+    self.currentIndex = currentIndex;
     self.titlesArray = titlesArray;
     self.configration = configration ? configration : [YNPageScrollViewMenuConfigration pageScrollViewMenuConfigration];
     self.delegate = delegate;
@@ -184,7 +183,7 @@
         ((UILabel *)self.itemsArrayM[0]).transform = CGAffineTransformMakeScale(self.configration.itemMaxScale, self.configration.itemMaxScale);
     }
     
-    [self selectedItemIndex:0 animated:NO];
+    [self selectedItemIndex:self.currentIndex animated:NO];
     
 }
 

@@ -7,71 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E4720BA1D407A070063CEB9 /* UIHomeViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */; };
+		2EA091FB1D45E90A000C75C5 /* UIView+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F01D45E90A000C75C5 /* UIView+YNCategory.m */; };
+		2EA091FC1D45E90A000C75C5 /* UIViewController+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F21D45E90A000C75C5 /* UIViewController+YNCategory.m */; };
+		2EA091FD1D45E90A000C75C5 /* YNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F41D45E90A000C75C5 /* YNPageScrollView.m */; };
+		2EA091FE1D45E90A000C75C5 /* YNPageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F61D45E90A000C75C5 /* YNPageScrollViewController.m */; };
+		2EA091FF1D45E90A000C75C5 /* YNPageScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F81D45E90A000C75C5 /* YNPageScrollViewMenu.m */; };
+		2EA092001D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091FA1D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m */; };
+		2EA092151D45E914000C75C5 /* YNTestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092041D45E914000C75C5 /* YNTestBaseViewController.m */; };
+		2EA092161D45E914000C75C5 /* YNTestFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092061D45E914000C75C5 /* YNTestFourViewController.m */; };
+		2EA092171D45E914000C75C5 /* YNTestOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092081D45E914000C75C5 /* YNTestOneViewController.m */; };
+		2EA092181D45E914000C75C5 /* YNTestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0920A1D45E914000C75C5 /* YNTestThreeViewController.m */; };
+		2EA092191D45E914000C75C5 /* YNTestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0920C1D45E914000C75C5 /* YNTestTwoViewController.m */; };
+		2EA0921A1D45E914000C75C5 /* YNBanTangDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0920E1D45E914000C75C5 /* YNBanTangDemoViewController.m */; };
+		2EA0921B1D45E914000C75C5 /* YNJianShuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092101D45E914000C75C5 /* YNJianShuDemoViewController.m */; };
+		2EA0921C1D45E914000C75C5 /* YNNavStyleViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092121D45E914000C75C5 /* YNNavStyleViewDemoViewController.m */; };
+		2EA0921D1D45E914000C75C5 /* YNTopStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092141D45E914000C75C5 /* YNTopStyleViewController.m */; };
+		2EA092241D45E925000C75C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0921F1D45E925000C75C5 /* AppDelegate.m */; };
+		2EA092251D45E925000C75C5 /* UIHomeViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092211D45E925000C75C5 /* UIHomeViewControler.m */; };
+		2EA092261D45E925000C75C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092231D45E925000C75C5 /* ViewController.m */; };
+		2EA092281D45E933000C75C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA092271D45E933000C75C5 /* Main.storyboard */; };
 		2EA142921D3E0F87002C75DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142911D3E0F87002C75DE /* main.m */; };
-		2EA142951D3E0F87002C75DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142941D3E0F87002C75DE /* AppDelegate.m */; };
-		2EA142981D3E0F87002C75DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142971D3E0F87002C75DE /* ViewController.m */; };
-		2EA1429B1D3E0F87002C75DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA142991D3E0F87002C75DE /* Main.storyboard */; };
 		2EA1429D1D3E0F87002C75DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429C1D3E0F87002C75DE /* Assets.xcassets */; };
 		2EA142A01D3E0F87002C75DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */; };
-		2EA142AF1D3E1324002C75DE /* YNBanTangDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */; };
-		2EA142B21D3E135F002C75DE /* YNJianShuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */; };
-		2EA142B51D3E1392002C75DE /* YNNavStyleViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */; };
-		2EA142B81D3E13CF002C75DE /* YNTopStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */; };
-		2EA142BB1D3E15B3002C75DE /* YNPageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */; };
-		2EA142BE1D3E15BD002C75DE /* YNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */; };
-		2EA142C11D3E15CC002C75DE /* UIView+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */; };
-		2EA142C61D3E15E3002C75DE /* YNPageScrollViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */; };
-		2EA142C71D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */; };
-		2EA142CB1D3E183C002C75DE /* YNTestBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */; };
-		2EA142CE1D3E18EE002C75DE /* YNTestOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */; };
-		2EA142D11D3E191A002C75DE /* YNTestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */; };
-		2EA142D41D3E1943002C75DE /* YNTestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */; };
-		2EA142D71D3E1974002C75DE /* YNTestFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */; };
 		D0E53006C639CA702E202C41 /* libPods-YNPageScrollViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 831D0D88B14185798ABD1CF9 /* libPods-YNPageScrollViewController.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E4720B81D407A070063CEB9 /* UIHomeViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeViewControler.h; sourceTree = "<group>"; };
-		2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeViewControler.m; sourceTree = "<group>"; };
+		2EA091EF1D45E90A000C75C5 /* UIView+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YNCategory.h"; sourceTree = "<group>"; };
+		2EA091F01D45E90A000C75C5 /* UIView+YNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YNCategory.m"; sourceTree = "<group>"; };
+		2EA091F11D45E90A000C75C5 /* UIViewController+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YNCategory.h"; sourceTree = "<group>"; };
+		2EA091F21D45E90A000C75C5 /* UIViewController+YNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YNCategory.m"; sourceTree = "<group>"; };
+		2EA091F31D45E90A000C75C5 /* YNPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollView.h; sourceTree = "<group>"; };
+		2EA091F41D45E90A000C75C5 /* YNPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollView.m; sourceTree = "<group>"; };
+		2EA091F51D45E90A000C75C5 /* YNPageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewController.h; sourceTree = "<group>"; };
+		2EA091F61D45E90A000C75C5 /* YNPageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewController.m; sourceTree = "<group>"; };
+		2EA091F71D45E90A000C75C5 /* YNPageScrollViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenu.h; sourceTree = "<group>"; };
+		2EA091F81D45E90A000C75C5 /* YNPageScrollViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenu.m; sourceTree = "<group>"; };
+		2EA091F91D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenuConfigration.h; sourceTree = "<group>"; };
+		2EA091FA1D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenuConfigration.m; sourceTree = "<group>"; };
+		2EA092031D45E914000C75C5 /* YNTestBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestBaseViewController.h; sourceTree = "<group>"; };
+		2EA092041D45E914000C75C5 /* YNTestBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestBaseViewController.m; sourceTree = "<group>"; };
+		2EA092051D45E914000C75C5 /* YNTestFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestFourViewController.h; sourceTree = "<group>"; };
+		2EA092061D45E914000C75C5 /* YNTestFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestFourViewController.m; sourceTree = "<group>"; };
+		2EA092071D45E914000C75C5 /* YNTestOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestOneViewController.h; sourceTree = "<group>"; };
+		2EA092081D45E914000C75C5 /* YNTestOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestOneViewController.m; sourceTree = "<group>"; };
+		2EA092091D45E914000C75C5 /* YNTestThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestThreeViewController.h; sourceTree = "<group>"; };
+		2EA0920A1D45E914000C75C5 /* YNTestThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestThreeViewController.m; sourceTree = "<group>"; };
+		2EA0920B1D45E914000C75C5 /* YNTestTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestTwoViewController.h; sourceTree = "<group>"; };
+		2EA0920C1D45E914000C75C5 /* YNTestTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestTwoViewController.m; sourceTree = "<group>"; };
+		2EA0920D1D45E914000C75C5 /* YNBanTangDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNBanTangDemoViewController.h; sourceTree = "<group>"; };
+		2EA0920E1D45E914000C75C5 /* YNBanTangDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNBanTangDemoViewController.m; sourceTree = "<group>"; };
+		2EA0920F1D45E914000C75C5 /* YNJianShuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNJianShuDemoViewController.h; sourceTree = "<group>"; };
+		2EA092101D45E914000C75C5 /* YNJianShuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNJianShuDemoViewController.m; sourceTree = "<group>"; };
+		2EA092111D45E914000C75C5 /* YNNavStyleViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNNavStyleViewDemoViewController.h; sourceTree = "<group>"; };
+		2EA092121D45E914000C75C5 /* YNNavStyleViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNNavStyleViewDemoViewController.m; sourceTree = "<group>"; };
+		2EA092131D45E914000C75C5 /* YNTopStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTopStyleViewController.h; sourceTree = "<group>"; };
+		2EA092141D45E914000C75C5 /* YNTopStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTopStyleViewController.m; sourceTree = "<group>"; };
+		2EA0921E1D45E925000C75C5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2EA0921F1D45E925000C75C5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2EA092201D45E925000C75C5 /* UIHomeViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeViewControler.h; sourceTree = "<group>"; };
+		2EA092211D45E925000C75C5 /* UIHomeViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeViewControler.m; sourceTree = "<group>"; };
+		2EA092221D45E925000C75C5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2EA092231D45E925000C75C5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2EA092271D45E933000C75C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2EA1428D1D3E0F87002C75DE /* YNPageScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNPageScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA142911D3E0F87002C75DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2EA142931D3E0F87002C75DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2EA142941D3E0F87002C75DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2EA142961D3E0F87002C75DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2EA142971D3E0F87002C75DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2EA1429A1D3E0F87002C75DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2EA1429C1D3E0F87002C75DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA1429F1D3E0F87002C75DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA142A11D3E0F87002C75DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2EA142AD1D3E1324002C75DE /* YNBanTangDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNBanTangDemoViewController.h; sourceTree = "<group>"; };
-		2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNBanTangDemoViewController.m; sourceTree = "<group>"; };
-		2EA142B01D3E135F002C75DE /* YNJianShuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNJianShuDemoViewController.h; sourceTree = "<group>"; };
-		2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNJianShuDemoViewController.m; sourceTree = "<group>"; };
-		2EA142B31D3E1392002C75DE /* YNNavStyleViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNNavStyleViewDemoViewController.h; sourceTree = "<group>"; };
-		2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNNavStyleViewDemoViewController.m; sourceTree = "<group>"; };
-		2EA142B61D3E13CF002C75DE /* YNTopStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTopStyleViewController.h; sourceTree = "<group>"; };
-		2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTopStyleViewController.m; sourceTree = "<group>"; };
-		2EA142B91D3E15B3002C75DE /* YNPageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewController.h; sourceTree = "<group>"; };
-		2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewController.m; sourceTree = "<group>"; };
-		2EA142BC1D3E15BD002C75DE /* YNPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollView.h; sourceTree = "<group>"; };
-		2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollView.m; sourceTree = "<group>"; };
-		2EA142BF1D3E15CC002C75DE /* UIView+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YNCategory.h"; sourceTree = "<group>"; };
-		2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YNCategory.m"; sourceTree = "<group>"; };
-		2EA142C21D3E15E3002C75DE /* YNPageScrollViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenu.h; sourceTree = "<group>"; };
-		2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenu.m; sourceTree = "<group>"; };
-		2EA142C41D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollViewMenuConfigration.h; sourceTree = "<group>"; };
-		2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollViewMenuConfigration.m; sourceTree = "<group>"; };
-		2EA142C91D3E183C002C75DE /* YNTestBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestBaseViewController.h; sourceTree = "<group>"; };
-		2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestBaseViewController.m; sourceTree = "<group>"; };
-		2EA142CC1D3E18EE002C75DE /* YNTestOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestOneViewController.h; sourceTree = "<group>"; };
-		2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestOneViewController.m; sourceTree = "<group>"; };
-		2EA142CF1D3E191A002C75DE /* YNTestTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestTwoViewController.h; sourceTree = "<group>"; };
-		2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestTwoViewController.m; sourceTree = "<group>"; };
-		2EA142D21D3E1943002C75DE /* YNTestThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestThreeViewController.h; sourceTree = "<group>"; };
-		2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestThreeViewController.m; sourceTree = "<group>"; };
-		2EA142D51D3E1974002C75DE /* YNTestFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTestFourViewController.h; sourceTree = "<group>"; };
-		2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTestFourViewController.m; sourceTree = "<group>"; };
 		498AF6E6D8EFFB9A6C961023 /* Pods-YNPageScrollViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNPageScrollViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController.debug.xcconfig"; sourceTree = "<group>"; };
 		831D0D88B14185798ABD1CF9 /* libPods-YNPageScrollViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YNPageScrollViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB826A097F7588AFF7E2E0B5 /* Pods-YNPageScrollViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNPageScrollViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNPageScrollViewController/Pods-YNPageScrollViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +92,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EA091ED1D45E90A000C75C5 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				2EA091EE1D45E90A000C75C5 /* YNPageScrollViewController */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		2EA091EE1D45E90A000C75C5 /* YNPageScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EA091EF1D45E90A000C75C5 /* UIView+YNCategory.h */,
+				2EA091F01D45E90A000C75C5 /* UIView+YNCategory.m */,
+				2EA091F11D45E90A000C75C5 /* UIViewController+YNCategory.h */,
+				2EA091F21D45E90A000C75C5 /* UIViewController+YNCategory.m */,
+				2EA091F31D45E90A000C75C5 /* YNPageScrollView.h */,
+				2EA091F41D45E90A000C75C5 /* YNPageScrollView.m */,
+				2EA091F51D45E90A000C75C5 /* YNPageScrollViewController.h */,
+				2EA091F61D45E90A000C75C5 /* YNPageScrollViewController.m */,
+				2EA091F71D45E90A000C75C5 /* YNPageScrollViewMenu.h */,
+				2EA091F81D45E90A000C75C5 /* YNPageScrollViewMenu.m */,
+				2EA091F91D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.h */,
+				2EA091FA1D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m */,
+			);
+			path = YNPageScrollViewController;
+			sourceTree = "<group>";
+		};
+		2EA092011D45E914000C75C5 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				2EA092021D45E914000C75C5 /* TestViewController */,
+				2EA0920D1D45E914000C75C5 /* YNBanTangDemoViewController.h */,
+				2EA0920E1D45E914000C75C5 /* YNBanTangDemoViewController.m */,
+				2EA0920F1D45E914000C75C5 /* YNJianShuDemoViewController.h */,
+				2EA092101D45E914000C75C5 /* YNJianShuDemoViewController.m */,
+				2EA092111D45E914000C75C5 /* YNNavStyleViewDemoViewController.h */,
+				2EA092121D45E914000C75C5 /* YNNavStyleViewDemoViewController.m */,
+				2EA092131D45E914000C75C5 /* YNTopStyleViewController.h */,
+				2EA092141D45E914000C75C5 /* YNTopStyleViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		2EA092021D45E914000C75C5 /* TestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EA092031D45E914000C75C5 /* YNTestBaseViewController.h */,
+				2EA092041D45E914000C75C5 /* YNTestBaseViewController.m */,
+				2EA092051D45E914000C75C5 /* YNTestFourViewController.h */,
+				2EA092061D45E914000C75C5 /* YNTestFourViewController.m */,
+				2EA092071D45E914000C75C5 /* YNTestOneViewController.h */,
+				2EA092081D45E914000C75C5 /* YNTestOneViewController.m */,
+				2EA092091D45E914000C75C5 /* YNTestThreeViewController.h */,
+				2EA0920A1D45E914000C75C5 /* YNTestThreeViewController.m */,
+				2EA0920B1D45E914000C75C5 /* YNTestTwoViewController.h */,
+				2EA0920C1D45E914000C75C5 /* YNTestTwoViewController.m */,
+			);
+			path = TestViewController;
+			sourceTree = "<group>";
+		};
 		2EA142841D3E0F87002C75DE = {
 			isa = PBXGroup;
 			children = (
@@ -110,15 +173,15 @@
 		2EA1428F1D3E0F87002C75DE /* YNPageScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2EA142A71D3E1118002C75DE /* Libs */,
-				2EA142A91D3E1131002C75DE /* Demo */,
-				2EA142931D3E0F87002C75DE /* AppDelegate.h */,
-				2EA142941D3E0F87002C75DE /* AppDelegate.m */,
-				2EA142961D3E0F87002C75DE /* ViewController.h */,
-				2EA142971D3E0F87002C75DE /* ViewController.m */,
-				2E4720B81D407A070063CEB9 /* UIHomeViewControler.h */,
-				2E4720B91D407A070063CEB9 /* UIHomeViewControler.m */,
-				2EA142991D3E0F87002C75DE /* Main.storyboard */,
+				2EA091ED1D45E90A000C75C5 /* Libs */,
+				2EA092011D45E914000C75C5 /* Demo */,
+				2EA0921E1D45E925000C75C5 /* AppDelegate.h */,
+				2EA0921F1D45E925000C75C5 /* AppDelegate.m */,
+				2EA092201D45E925000C75C5 /* UIHomeViewControler.h */,
+				2EA092211D45E925000C75C5 /* UIHomeViewControler.m */,
+				2EA092221D45E925000C75C5 /* ViewController.h */,
+				2EA092231D45E925000C75C5 /* ViewController.m */,
+				2EA092271D45E933000C75C5 /* Main.storyboard */,
 				2EA1429C1D3E0F87002C75DE /* Assets.xcassets */,
 				2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */,
 				2EA142A11D3E0F87002C75DE /* Info.plist */,
@@ -133,64 +196,6 @@
 				2EA142911D3E0F87002C75DE /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2EA142A71D3E1118002C75DE /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				2EA142A81D3E1118002C75DE /* YNPageScrollViewController */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		2EA142A81D3E1118002C75DE /* YNPageScrollViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2EA142B91D3E15B3002C75DE /* YNPageScrollViewController.h */,
-				2EA142BA1D3E15B3002C75DE /* YNPageScrollViewController.m */,
-				2EA142BC1D3E15BD002C75DE /* YNPageScrollView.h */,
-				2EA142BD1D3E15BD002C75DE /* YNPageScrollView.m */,
-				2EA142BF1D3E15CC002C75DE /* UIView+YNCategory.h */,
-				2EA142C01D3E15CC002C75DE /* UIView+YNCategory.m */,
-				2EA142C21D3E15E3002C75DE /* YNPageScrollViewMenu.h */,
-				2EA142C31D3E15E3002C75DE /* YNPageScrollViewMenu.m */,
-				2EA142C41D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.h */,
-				2EA142C51D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m */,
-			);
-			path = YNPageScrollViewController;
-			sourceTree = "<group>";
-		};
-		2EA142A91D3E1131002C75DE /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				2EA142C81D3E1819002C75DE /* TestViewController */,
-				2EA142AD1D3E1324002C75DE /* YNBanTangDemoViewController.h */,
-				2EA142AE1D3E1324002C75DE /* YNBanTangDemoViewController.m */,
-				2EA142B01D3E135F002C75DE /* YNJianShuDemoViewController.h */,
-				2EA142B11D3E135F002C75DE /* YNJianShuDemoViewController.m */,
-				2EA142B31D3E1392002C75DE /* YNNavStyleViewDemoViewController.h */,
-				2EA142B41D3E1392002C75DE /* YNNavStyleViewDemoViewController.m */,
-				2EA142B61D3E13CF002C75DE /* YNTopStyleViewController.h */,
-				2EA142B71D3E13CF002C75DE /* YNTopStyleViewController.m */,
-			);
-			path = Demo;
-			sourceTree = "<group>";
-		};
-		2EA142C81D3E1819002C75DE /* TestViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2EA142C91D3E183C002C75DE /* YNTestBaseViewController.h */,
-				2EA142CA1D3E183C002C75DE /* YNTestBaseViewController.m */,
-				2EA142CC1D3E18EE002C75DE /* YNTestOneViewController.h */,
-				2EA142CD1D3E18EE002C75DE /* YNTestOneViewController.m */,
-				2EA142CF1D3E191A002C75DE /* YNTestTwoViewController.h */,
-				2EA142D01D3E191A002C75DE /* YNTestTwoViewController.m */,
-				2EA142D21D3E1943002C75DE /* YNTestThreeViewController.h */,
-				2EA142D31D3E1943002C75DE /* YNTestThreeViewController.m */,
-				2EA142D51D3E1974002C75DE /* YNTestFourViewController.h */,
-				2EA142D61D3E1974002C75DE /* YNTestFourViewController.m */,
-			);
-			path = TestViewController;
 			sourceTree = "<group>";
 		};
 		3E316DF0DEA7EE4AF41355F0 /* Pods */ = {
@@ -270,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA092281D45E933000C75C5 /* Main.storyboard in Resources */,
 				2EA142A01D3E0F87002C75DE /* LaunchScreen.storyboard in Resources */,
 				2EA1429D1D3E0F87002C75DE /* Assets.xcassets in Resources */,
-				2EA1429B1D3E0F87002C75DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,38 +336,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EA142B81D3E13CF002C75DE /* YNTopStyleViewController.m in Sources */,
-				2EA142BB1D3E15B3002C75DE /* YNPageScrollViewController.m in Sources */,
-				2E4720BA1D407A070063CEB9 /* UIHomeViewControler.m in Sources */,
-				2EA142BE1D3E15BD002C75DE /* YNPageScrollView.m in Sources */,
-				2EA142981D3E0F87002C75DE /* ViewController.m in Sources */,
-				2EA142D41D3E1943002C75DE /* YNTestThreeViewController.m in Sources */,
-				2EA142951D3E0F87002C75DE /* AppDelegate.m in Sources */,
-				2EA142D71D3E1974002C75DE /* YNTestFourViewController.m in Sources */,
-				2EA142CB1D3E183C002C75DE /* YNTestBaseViewController.m in Sources */,
-				2EA142B21D3E135F002C75DE /* YNJianShuDemoViewController.m in Sources */,
-				2EA142B51D3E1392002C75DE /* YNNavStyleViewDemoViewController.m in Sources */,
-				2EA142D11D3E191A002C75DE /* YNTestTwoViewController.m in Sources */,
-				2EA142C71D3E15E3002C75DE /* YNPageScrollViewMenuConfigration.m in Sources */,
-				2EA142AF1D3E1324002C75DE /* YNBanTangDemoViewController.m in Sources */,
-				2EA142CE1D3E18EE002C75DE /* YNTestOneViewController.m in Sources */,
-				2EA142C11D3E15CC002C75DE /* UIView+YNCategory.m in Sources */,
+				2EA091FC1D45E90A000C75C5 /* UIViewController+YNCategory.m in Sources */,
 				2EA142921D3E0F87002C75DE /* main.m in Sources */,
-				2EA142C61D3E15E3002C75DE /* YNPageScrollViewMenu.m in Sources */,
+				2EA092251D45E925000C75C5 /* UIHomeViewControler.m in Sources */,
+				2EA092001D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m in Sources */,
+				2EA091FB1D45E90A000C75C5 /* UIView+YNCategory.m in Sources */,
+				2EA091FD1D45E90A000C75C5 /* YNPageScrollView.m in Sources */,
+				2EA091FF1D45E90A000C75C5 /* YNPageScrollViewMenu.m in Sources */,
+				2EA092181D45E914000C75C5 /* YNTestThreeViewController.m in Sources */,
+				2EA092261D45E925000C75C5 /* ViewController.m in Sources */,
+				2EA0921C1D45E914000C75C5 /* YNNavStyleViewDemoViewController.m in Sources */,
+				2EA0921B1D45E914000C75C5 /* YNJianShuDemoViewController.m in Sources */,
+				2EA0921A1D45E914000C75C5 /* YNBanTangDemoViewController.m in Sources */,
+				2EA092151D45E914000C75C5 /* YNTestBaseViewController.m in Sources */,
+				2EA092191D45E914000C75C5 /* YNTestTwoViewController.m in Sources */,
+				2EA092161D45E914000C75C5 /* YNTestFourViewController.m in Sources */,
+				2EA092171D45E914000C75C5 /* YNTestOneViewController.m in Sources */,
+				2EA092241D45E925000C75C5 /* AppDelegate.m in Sources */,
+				2EA091FE1D45E90A000C75C5 /* YNPageScrollViewController.m in Sources */,
+				2EA0921D1D45E914000C75C5 /* YNTopStyleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2EA142991D3E0F87002C75DE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2EA1429A1D3E0F87002C75DE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

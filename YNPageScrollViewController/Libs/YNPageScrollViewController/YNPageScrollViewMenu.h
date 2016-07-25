@@ -27,11 +27,12 @@
 @property (nonatomic, weak) id<YNPageScrollViewMenuDelegate> delegate;
 
 
+
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-+ (instancetype)pageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate;
++ (instancetype)pageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate currentIndex:(NSInteger)currentIndex;
 
 - (void)adjustItemPositionWithCurrentIndex:(NSInteger)index;
 

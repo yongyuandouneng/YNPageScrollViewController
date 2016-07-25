@@ -93,21 +93,23 @@
     
         
         if ([self isSuspensionStyle]) {
-            
-            [self initPageScrollViewMenuWithFrame:CGRectMake(0,self.headerView.yn_height,self.view.yn_width,self.configration.menuHeight)];
-    
-            self.originHeaderOffSetY = self.scrollViewMenu.yn_y;
-    
-            UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
+            //初始化headerView
             self.bigHeaderView.frame = self.headerView.frame;
             self.bigHeaderView.yn_height += self.configration.menuHeight;
-    
             [self.bigHeaderView addSubview:self.headerView];
+            
+            //初始化菜单
+            [self initPageScrollViewMenuWithFrame:CGRectMake(0,self.headerView.yn_height,self.view.yn_width,self.configration.menuHeight)];
+            
+            UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
             tableView.tableHeaderView = self.bigHeaderView;
             tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.bigHeaderView.yn_height, 0, 0, 0);
             
             ((YNPageScrollView *)self.parentScrollView).headerViewHeight = self.bigHeaderView.yn_height;
             
+            
+            self.originHeaderOffSetY = self.scrollViewMenu.yn_y;
+    
         }else if ([self isTopStyle]){
     
             [self initPageScrollViewMenuWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.configration.menuHeight)];
@@ -122,7 +124,7 @@
     
     [self configUI];
     
-    [self setPageScrollViewMenuSelectPageIndex:self.pageIndex animated:NO];
+//    [self setPageScrollViewMenuSelectPageIndex:self.pageIndex animated:NO];
 }
 
 
@@ -163,7 +165,7 @@
 
 - (void)initPageScrollViewMenuWithFrame:(CGRect)frame{
     
-    YNPageScrollViewMenu *scrollViewMenu = [YNPageScrollViewMenu pageScrollViewMenuWithFrame:frame titles:self.titleArrayM Configration:self.configration delegate:self];
+    YNPageScrollViewMenu *scrollViewMenu = [YNPageScrollViewMenu pageScrollViewMenuWithFrame:frame titles:self.titleArrayM Configration:self.configration delegate:self currentIndex:self.pageIndex];
     self.scrollViewMenu = scrollViewMenu;
     
     if ([self isNavigationStyle]) {

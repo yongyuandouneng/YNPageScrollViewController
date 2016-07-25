@@ -83,33 +83,27 @@
 //select-tableview
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *vc = nil;
-    viewcontroller_type = 3;
     if (indexPath.row == 0) {     //半塘Demo
         
-        viewcontroller_type = 1;
         vc = [self getBanTangViewController];
         vc.hidesBottomBarWhenPushed = YES;
         
     }else if (indexPath.row == 1){//简书Demo
         
-        viewcontroller_type = 2;
         vc = [self getJianShuDemoViewController];
         vc.hidesBottomBarWhenPushed = YES;
         
     }else if (indexPath.row == 2){//导航条样式Demo
         
-        viewcontroller_type = 3;
         vc = [self getNavStyleViewDemoViewController];
         vc.hidesBottomBarWhenPushed = YES;
         
     }else if (indexPath.row == 3){//顶部样式Demo
         
-        viewcontroller_type = 4;
         vc = [self YNTopStyleViewController];
         vc.hidesBottomBarWhenPushed = YES;
         
     }else{
-        viewcontroller_type = 5;
         vc = [[UIHomeViewControler alloc]init];
 //        vc.hidesBottomBarWhenPushed = YES;
         
@@ -178,8 +172,8 @@
     configration.scrollViewBackgroundColor = [UIColor whiteColor];
     configration.selectedItemColor = [UIColor redColor];
     //设置平分不滚动   默认会居中
-    configration.aligmentModeCenter = NO;
-    configration.scrollMenu = NO;
+    configration.aligmentModeCenter = YES;
+    configration.scrollMenu = YES;
     
     configration.showGradientColor = NO;//取消渐变
     
@@ -190,8 +184,11 @@
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTap)]];
     
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 0)];
-    footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    //里面有默认高度 等ScrollView的高度 //里面设置了背景颜色与tableview相同
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 0)];
+    
+    vc.pageIndex = 3;
+    
     vc.placeHoderView = footerView;
     
     vc.headerView = imageView;

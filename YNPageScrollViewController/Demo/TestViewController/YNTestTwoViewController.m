@@ -14,7 +14,7 @@
     
     [super viewDidLoad];
 
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor greenColor];
     
     
     NSLog(@"two - viewDidLoad");

@@ -16,7 +16,7 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 
 //数据源
 @protocol YNPageScrollViewControllerDataSource <NSObject>
-@optional
+
 //设置UIScrollView
 - (UIScrollView *)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewForIndex:(NSInteger )index;
 
