@@ -29,8 +29,15 @@
     btn.backgroundColor = [UIColor orangeColor];
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+}
 - (void)btnAction{
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -44,31 +51,12 @@
     self.navView.alpha = progress;
     
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES];
-
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:animated];
-    
-    [self.navigationController setNavigationBarHidden:NO];
-
-}
-
-
 - (UIView *)navView{
     
     if (!_navView) {
         _navView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
         _navView.backgroundColor = [UIColor purpleColor];
         _navView.alpha = 0;
-        
     }
     
     return _navView;

@@ -11,10 +11,15 @@
 #import "MJRefreshHeader.h"
 #import "MJRefreshAutoFooter.h"
 #import "YNPageScrollViewController.h"
+#import "YNTestOneViewController.h"
+#import "YNTestTwoViewController.h"
+
+#import "UIScrollView+EmptyDataSet.h"
+
 
 NSInteger viewcontroller_type = 1;
 
-@interface YNTestBaseViewController ()
+@interface YNTestBaseViewController ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @property (nonatomic, strong) NSMutableArray *datasArrayM;
 
@@ -26,24 +31,37 @@ NSInteger viewcontroller_type = 1;
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+    [self.view addSubview:self.tableView];
+    
+    if ([self isKindOfClass:[YNTestTwoViewController class]]) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            for (int i = 0; i < 12; i++) {
+                
+                [self.datasArrayM addObject:[NSString stringWithFormat:@" 原始数据 %zd",i]];
+            }
+            [self.tableView reloadData];
+            //重置placeHoderView frame
+            [self.ynPageScrollViewController reloadPlaceHoderViewFrame]; 
+        });
+    }else{
         
         for (int i = 0; i < 20; i++) {
             [self.datasArrayM addObject:[NSString stringWithFormat:@" 原始数据 %zd",i]];
         }
         [self.tableView reloadData];
-    });
-    
-    [self.view addSubview:self.tableView];
-    //监听通知 在滑动和选中的时候关闭刷新状态 数据仍然在后台加载
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRefreshing) name:YNNotificationUpdateTableViewRefresh object:nil];
-    
+        //重置placeHoderView frame
+        [self.ynPageScrollViewController reloadPlaceHoderViewFrame];
+        
+    }
+
     __weak typeof (YNTestBaseViewController *)weakself = self;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSInteger count = weakself.datasArrayM.count;
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 2; i++) {
                 [weakself.datasArrayM insertObject:[NSString stringWithFormat:@" 刷新数据 %zd",count + i] atIndex:0];
             }
             NSLog(@"上啦加载完成");
@@ -135,6 +153,8 @@ NSInteger viewcontroller_type = 1;
 //select-tableview
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+//    YNTestOneViewController *vc = [[YNTestOneViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -144,8 +164,11 @@ NSInteger viewcontroller_type = 1;
 
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
+//        _tableView.emptyDataSetSource = self;
+//        _tableView.emptyDataSetDelegate = self;
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        
     }
     return _tableView;
 
@@ -168,6 +191,41 @@ NSInteger viewcontroller_type = 1;
     
     NSLog(@"%@",[NSString stringWithFormat:@"%@ 销毁",NSStringFromClass([self class])]);
 
+}
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView{
+
+    return YES;
+}
+
+- (void)emptyDataSetDidAppear:(UIScrollView *)scrollView{
+    
+    NSLog(@"emptyDataSetDidAppear");
+
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView{
+    
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldBeForcedToDisplay:(UIScrollView *)scrollView{
+    
+    return YES;
+}
+
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView{
+    
+    UIView *view2 =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 1000)];
+    view2.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    return view2;
+
+}
+
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    
+    return 1000;
 }
 
 @end

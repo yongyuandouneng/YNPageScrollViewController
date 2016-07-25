@@ -17,8 +17,10 @@
 #import "YNJianShuDemoViewController.h"
 #import "YNNavStyleViewDemoViewController.h"
 #import "YNTopStyleViewController.h"
+#import "MJRefresh.h"
+#import "UIHomeViewControler.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource,YNPageScrollViewControllerDataSource>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource,YNPageScrollViewControllerDataSource,SDCycleScrollViewDelegate>
 
 @property (nonatomic, strong) NSArray *array;
 
@@ -30,12 +32,20 @@
     [super viewDidLoad];
     
     self.array = @[@"YNBanTangDemoViewController",@"YNJianShuDemoViewController"
-                   ,@"YNNavStyleViewDemo",@"YNTopStyleViewController"];
+                   ,@"YNNavStyleViewDemo",@"YNTopStyleViewController",@"UIHomeViewControler"];
     
     self.title = @"Push控制器";
     
-    [self.navigationController.navigationBar setTranslucent:NO];
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    [UIApplication sharedApplication].keyWindow.backgroundColor = [UIColor whiteColor];
     
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
 }
 
@@ -75,18 +85,36 @@
     UIViewController *vc = nil;
     viewcontroller_type = 3;
     if (indexPath.row == 0) {     //半塘Demo
+        
         viewcontroller_type = 1;
         vc = [self getBanTangViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        
     }else if (indexPath.row == 1){//简书Demo
+        
+        viewcontroller_type = 2;
         vc = [self getJianShuDemoViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        
     }else if (indexPath.row == 2){//导航条样式Demo
+        
+        viewcontroller_type = 3;
         vc = [self getNavStyleViewDemoViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        
     }else if (indexPath.row == 3){//顶部样式Demo
+        
+        viewcontroller_type = 4;
         vc = [self YNTopStyleViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        
     }else{
-        vc = [[YNTestOneViewController alloc]init];
+        viewcontroller_type = 5;
+        vc = [[UIHomeViewControler alloc]init];
+//        vc.hidesBottomBarWhenPushed = YES;
+        
     }
-    vc.hidesBottomBarWhenPushed = YES;
+    
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -122,10 +150,13 @@
 
     //头部headerView
     SDCycleScrollView *headerView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 200) imageURLStringsGroup:imagesURLStrings];
-    
+    headerView2.delegate = self;
     YNBanTangDemoViewController *vc = [YNBanTangDemoViewController pageScrollViewControllerWithControllers:@[one,two,three,four] titles:@[@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
     vc.dataSource = self;
     
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 0)];
+    footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    vc.placeHoderView = footerView;
     vc.headerView = headerView2;
     
     return vc;
@@ -158,10 +189,22 @@
     imageView.image = [UIImage imageNamed:@"QYPPMyContributeListHead"];
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTap)]];
-    vc.dataSource = self;
+    
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 0)];
+    footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    vc.placeHoderView = footerView;
+    
     vc.headerView = imageView;
     
+    vc.dataSource = self;
+    
+    
     return vc;
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    NSLog(@"轮播图 点击 Index : %zd",index);
 }
 
 - (void)imageViewTap{
@@ -212,14 +255,26 @@
 
 }
 
-#pragma mark - YNPageScrollViewControllerDataSource //悬浮专用
-- (UITableView *)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController tableViewForIndex:(NSInteger)index{
+#pragma mark - YNPageScrollViewControllerDataSource
+- (UITableView *)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewForIndex:(NSInteger)index{
     
-    YNTestBaseViewController *VC= pageScrollViewController.viewControllers[index];
+    YNTestBaseViewController *VC= (YNTestBaseViewController *)pageScrollViewController.currentViewController;
     return [VC tableView];
     
 };
 
+- (BOOL)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController headerViewIsRefreshingForIndex:(NSInteger)index{
+    
+    YNTestBaseViewController *VC= (YNTestBaseViewController *)pageScrollViewController.currentViewController;
+    return [[[VC tableView] mj_header ] isRefreshing];
+}
+
+- (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewHeaderAndFooterEndRefreshForIndex:(NSInteger)index{
+    
+    YNTestBaseViewController *VC= pageScrollViewController.viewControllers[index];
+    [[[VC tableView] mj_header] endRefreshing];
+    [[[VC tableView] mj_footer] endRefreshing];
+}
 
 - (NSArray *)getViewController{
     

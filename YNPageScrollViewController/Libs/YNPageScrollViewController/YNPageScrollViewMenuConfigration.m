@@ -32,6 +32,7 @@
     self = [super init];
     if (self) {
         _showNavigation = YES;
+        _showTabbar = NO;
         _pageScrollViewMenuStyle = YNPageScrollViewMenuStyleTop;
         _showConver = NO;
         _showScrollLine = YES;

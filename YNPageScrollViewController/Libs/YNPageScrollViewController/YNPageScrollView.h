@@ -10,4 +10,6 @@
 
 @interface YNPageScrollView : UIScrollView
 
+@property (nonatomic, assign) CGFloat headerViewHeight;
+
 @end

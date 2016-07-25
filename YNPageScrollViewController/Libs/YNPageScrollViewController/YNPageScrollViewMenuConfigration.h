@@ -18,8 +18,10 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 
 @interface YNPageScrollViewMenuConfigration : NSObject
 
-/** 是否显示导航条*/
+/** 是否显示导航条 YES*/
 @property (nonatomic, assign) BOOL showNavigation;
+/** 是否显示Tabbar NO*/
+@property (nonatomic, assign) BOOL showTabbar;
 /** 菜单位置风格 默认 0*/
 @property (nonatomic, assign) YNPageScrollViewMenuStyle pageScrollViewMenuStyle;
 /** 是否显示遮盖*/
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, assign) BOOL scrollMenu;
 /** 菜单弹簧效果 NO */
 @property (nonatomic, assign) BOOL bounces;
-/** 是否是居中 (当所有的Item大小小于ScrollView宽度) YES*/
+/** 是否是居中 (当所有的Item+margin的宽度小于ScrollView宽度) 默认 YES*/
 @property (nonatomic, assign) BOOL aligmentModeCenter;
 /** 按钮N图片*/
 @property (nonatomic, copy) NSString *addButtonNormalImageName;
@@ -68,7 +70,7 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, strong) UIFont *itemFont;
 /** 缩放系数*/
 @property (nonatomic, assign) CGFloat itemMaxScale;
-/** 下拉刷新头部时间 0.4 */
+/** 下拉刷新头部动画（endingRefresh）时间 0.4 */
 @property (nonatomic, assign) CGFloat tableViewResfreshAnimationTime;
 
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;

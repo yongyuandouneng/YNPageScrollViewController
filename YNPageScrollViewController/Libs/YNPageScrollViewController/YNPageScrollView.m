@@ -15,7 +15,7 @@
     
     if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UILayoutContainerView")]) {
         if (otherGestureRecognizer.state == UIGestureRecognizerStateBegan && self.contentOffset.x == 0) {
-            return NO;
+            return YES;
         }
     }
     
@@ -25,8 +25,15 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     //MARK: UITableViewCell 自定义手势可能要在此处自行定义
     if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UITableViewWrapperView")] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        return NO;
+        return YES;
     }
     return NO;
 }
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    CGFloat X = [gestureRecognizer locationInView:gestureRecognizer.view].y;
+    return X > self.headerViewHeight;
+}
+
 @end
