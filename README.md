@@ -69,7 +69,7 @@
     
     4.目前只支持里面的内容是UITableView或UITableViewController，并且不能有FooterView.
     
-    5.在[self.tableView reloadData]; 需要调用刷新footerView的方法以计算需要填充的内容高度。[self.ynPageScrollViewController reloadPlaceHoderViewFrame];
+    5.在[self.tableView reloadData]后,需要调用刷新footerView的方法以计算需要填充的内容高度。[self.ynPageScrollViewController reloadPlaceHoderViewFrame];
     
     6.具体请看上面的简书Demo代码.
 
