@@ -1,11 +1,12 @@
 # YNPageScrollViewController
 
 ###先上效果图
+---
 
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
 
-喜欢就start鼓励一下，您在使用过程中有任何问题(我会告诉你)、出现任何BUG、Crash（我会马上解决）、请加QQ群538133294或联系我的扣扣1003580893.
+第一张是集成在项目后的gif，喜欢就start鼓励一下，您在使用过程中有任何问题、出现任何BUG、Crash)，请加QQ群538133294或联系我的扣扣1003580893.
 
 ###优点
 ---
@@ -14,6 +15,7 @@
 
 ###怎么样使用呢？
 ---
+
 一、统一使用配置信息类YNPageScrollViewMenuConfigration 创建YNPageScrollViewController控制器。控制器可以采用继承/直接使用/作为子类方式。
 ```objective-c
 
@@ -57,7 +59,7 @@
 }
 ```
 
-(1)悬浮样式
+(1) 悬浮样式
     
     1.配置样式为YNPageScrollViewMenuStyleSuspension.
     
@@ -67,9 +69,11 @@
     
     4.目前只支持里面的内容是UITableView或UITableViewController，并且不能有FooterView.
     
+    5.在[self.tableView reloadData]; 需要调用刷新footerView的方法以计算需要填充的内容高度。[self.ynPageScrollViewController reloadPlaceHoderViewFrame];
+    
     5.具体请看上面的简书Demo代码.
 
-(2)导航条样&顶部样式
+(2) 导航条样&顶部样式
     
     1. 设置样式为YNPageScrollViewMenuStyleNavigation(导航条)、样式YNPageScrollViewMenuStyleTop(顶部).
     
