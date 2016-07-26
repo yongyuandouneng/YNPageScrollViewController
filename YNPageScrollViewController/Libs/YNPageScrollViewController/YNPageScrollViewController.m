@@ -519,6 +519,10 @@
     }
 }
 
+- (void)addPageScrollViewControllerWithTitle:(NSString *)title{
+    
+}
+
 #pragma mark - Private Method
 
 - (void)checkParams{
