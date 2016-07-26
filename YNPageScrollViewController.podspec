@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YNPageScrollViewController'
   s.version          = '1.0.0'
-  s.summary          = '一个强大的PageScrollViewController滑动库。菜单多种样式选择，支持悬浮样式、导航条样式、顶部样式。旧版半塘首页Demo、简书个人文章Demo.'
+  s.summary          = '一个强大的PageScrollViewController滑动库.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+一个强大的PageScrollViewController滑动库。菜单多种样式选择，支持悬浮样式、导航条样式、顶部样式.旧版半塘首页Demo、简书个人文章Demo.
                        DESC
 
   s.homepage         = 'https://github.com/yongyuandouneng/YNPageScrollViewController'
