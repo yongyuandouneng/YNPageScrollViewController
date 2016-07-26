@@ -26,6 +26,7 @@
 		2EA092251D45E925000C75C5 /* UIHomeViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092211D45E925000C75C5 /* UIHomeViewControler.m */; };
 		2EA092261D45E925000C75C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA092231D45E925000C75C5 /* ViewController.m */; };
 		2EA092281D45E933000C75C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA092271D45E933000C75C5 /* Main.storyboard */; };
+		2EA0922C1D470469000C75C5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0922B1D470469000C75C5 /* README.md */; };
 		2EA142921D3E0F87002C75DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA142911D3E0F87002C75DE /* main.m */; };
 		2EA1429D1D3E0F87002C75DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429C1D3E0F87002C75DE /* Assets.xcassets */; };
 		2EA142A01D3E0F87002C75DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		2EA092221D45E925000C75C5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2EA092231D45E925000C75C5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2EA092271D45E933000C75C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2EA0922B1D470469000C75C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2EA1428D1D3E0F87002C75DE /* YNPageScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNPageScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA142911D3E0F87002C75DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2EA1429C1D3E0F87002C75DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				2EA1429C1D3E0F87002C75DE /* Assets.xcassets */,
 				2EA1429E1D3E0F87002C75DE /* LaunchScreen.storyboard */,
 				2EA142A11D3E0F87002C75DE /* Info.plist */,
+				2EA0922B1D470469000C75C5 /* README.md */,
 				2EA142901D3E0F87002C75DE /* Supporting Files */,
 			);
 			path = YNPageScrollViewController;
@@ -338,6 +341,7 @@
 			files = (
 				2EA091FC1D45E90A000C75C5 /* UIViewController+YNCategory.m in Sources */,
 				2EA142921D3E0F87002C75DE /* main.m in Sources */,
+				2EA0922C1D470469000C75C5 /* README.md in Sources */,
 				2EA092251D45E925000C75C5 /* UIHomeViewControler.m in Sources */,
 				2EA092001D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m in Sources */,
 				2EA091FB1D45E90A000C75C5 /* UIView+YNCategory.m in Sources */,

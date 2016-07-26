@@ -227,7 +227,7 @@
     
     YNNavStyleViewDemoViewController *vc = [YNNavStyleViewDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"新闻",@"搞笑视频",@"热门视频",@"有趣小事"] Configration:configration];
     
-    vc.dataSource = self;
+//    vc.dataSource = self;
     return vc;
 }
 

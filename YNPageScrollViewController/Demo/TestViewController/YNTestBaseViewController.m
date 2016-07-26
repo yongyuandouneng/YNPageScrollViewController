@@ -14,9 +14,9 @@
 #import "YNTestOneViewController.h"
 #import "YNTestTwoViewController.h"
 //是否带刷新
-#define HasHeaderRefresh 0
+#define HasHeaderRefresh 1
 //是否有loading和无数据view
-#define HasLoadingAndNotDataView 1
+#define HasLoadingAndNotDataView 0
 
 @interface YNTestBaseViewController ()
 

@@ -79,18 +79,19 @@
     //设置平分不滚动   默认会居中
     configration.aligmentModeCenter = NO;
     configration.scrollMenu = NO;
-    configration.showNavigation = YES;
     configration.showGradientColor = NO;//取消渐变
+    configration.showNavigation = YES;
     configration.showTabbar = YES;//设置显示tabbar
     
-    
+    //创建控制器
     YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
-    
+    //头部视图
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
     imageView.image = [UIImage imageNamed:@"QYPPMyContributeListHead"];
     imageView.userInteractionEnabled = YES;
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTap)]];
     
+    //footer用来当做内容高度
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 0)];
     footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     vc.placeHoderView = footerView;
