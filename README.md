@@ -58,16 +58,25 @@
 ```
 
 (1)悬浮样式
+
     * 配置样式为YNPageScrollViewMenuStyleSuspension.
+    
     * 悬浮样式创建时候如果需要headerView则需要在外面统一提供headerView，footerView也要提供用来充当里面的内容高度。具体请看上面的OC代码。
+    
     * 还需要设置数据源提供三个数据源的方法。
+    
     * 目前只支持里面的内容是UITableView或UITableViewController，并且不能有FooterView.
+    
     * 具体请看上面的简书Demo.
 
 (2)导航条样&顶部样式
+
     * 置样式为YNPageScrollViewMenuStyleNavigation(导航条)、样式YNPageScrollViewMenuStyleTop(顶部).
+    
     * 实现数据源的一个方法返回ScrollView数据
+    
     * 内容支持UITableView、UITableViewController、UICollectionViewController
+    
     * 具体看Demo
     
 
