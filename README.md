@@ -1,20 +1,18 @@
 # YNPageScrollViewController
-========
+
 ###先上效果图
+
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
 
 喜欢就start鼓励一下，您在使用过程中有任何问题(我会告诉你)、出现任何BUG、Crash（我会马上解决）、请加QQ群538133294或联系我的扣扣1003580893.
 
 ###优点
----
 
 * 控制器缓存、控制器生命周期无破坏、性能高
 * 菜单样式多样化、易拓展、易集成、易维护
 
-
 ###怎么样使用呢？
----
 
 一、统一使用配置信息类YNPageScrollViewMenuConfigration 创建YNPageScrollViewController控制器。控制器可以采用继承/直接使用/作为子类方式。
 ```objective-c
@@ -57,28 +55,19 @@
 
         return vc;
 }
-
-
 ```
 
-
-
 (1)悬浮样式
-    1.配置样式为YNPageScrollViewMenuStyleSuspension.
-    2.悬浮样式创建时候如果需要headerView则需要在外面统一提供headerView，footerView也要提供用来充当里面的内容高度。具体请看上面的OC代码。
-    3.还需要设置数据源提供三个数据源的方法。
-
-    4.目前只支持里面的内容是UITableView或UITableViewController，并且不能有FooterView.
-
-    5.具体请看上面的简书Demo.
+    * 配置样式为YNPageScrollViewMenuStyleSuspension.
+    * 悬浮样式创建时候如果需要headerView则需要在外面统一提供headerView，footerView也要提供用来充当里面的内容高度。具体请看上面的OC代码。
+    * 还需要设置数据源提供三个数据源的方法。
+    * 目前只支持里面的内容是UITableView或UITableViewController，并且不能有FooterView.
+    * 具体请看上面的简书Demo.
 
 (2)导航条样&顶部样式
-    1.配置样式为YNPageScrollViewMenuStyleNavigation(导航条)、样式YNPageScrollViewMenuStyleTop(顶部).
-    2.实现数据源的一个方法返回数据
-```objective-c
-- (UITableView *)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewForIndex:(NSInteger)index
-``` 
-    3.内容支持UITableView、UITableViewController、UICollectionViewController
-    4.具体看Demo
+    * 置样式为YNPageScrollViewMenuStyleNavigation(导航条)、样式YNPageScrollViewMenuStyleTop(顶部).
+    * 实现数据源的一个方法返回ScrollView数据
+    * 内容支持UITableView、UITableViewController、UICollectionViewController
+    * 具体看Demo
     
 
