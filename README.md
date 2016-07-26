@@ -4,13 +4,13 @@
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
 
-喜欢就start鼓励一下，您在使用过程中有任何问题(我会告诉你)、出现任何BUG（我会马上解决）、请加QQ群538133294或联系我的扣扣1003580893.
+喜欢就start鼓励一下，您在使用过程中有任何问题(我会告诉你)、出现任何BUG、Crash（我会马上解决）、请加QQ群538133294或联系我的扣扣1003580893.
 
 ###优点
 ---
 
 * 控制器缓存、控制器生命周期无破坏、性能高
-* 菜单样式多样化、易维护
+* 菜单样式多样化、易拓展、易集成、易维护
 
 
 ###怎么样使用呢？
