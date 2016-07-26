@@ -6,7 +6,7 @@
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
 ![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
 
-第一张是集成在项目后的gif，喜欢就start鼓励一下，您在使用过程中有任何问题、出现任何BUG、Crash)，请加QQ群538133294或联系我的扣扣1003580893.
+第一张是集成在项目后的gif，喜欢就start鼓励一下，您在使用过程中有任何问题、出现任何(BUG、Crash)，请加QQ群538133294或联系我的扣扣1003580893.
 
 ###优点
 ---
@@ -71,7 +71,7 @@
     
     5.在[self.tableView reloadData]; 需要调用刷新footerView的方法以计算需要填充的内容高度。[self.ynPageScrollViewController reloadPlaceHoderViewFrame];
     
-    5.具体请看上面的简书Demo代码.
+    6.具体请看上面的简书Demo代码.
 
 (2) 导航条样&顶部样式
     
