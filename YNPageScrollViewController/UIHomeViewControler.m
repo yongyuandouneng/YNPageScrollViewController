@@ -78,13 +78,13 @@
     configration.selectedItemColor = [UIColor redColor];
     //设置平分不滚动   默认会居中
     configration.aligmentModeCenter = NO;
-    configration.scrollMenu = NO;
+    configration.scrollMenu = YES;
     configration.showGradientColor = NO;//取消渐变
     configration.showNavigation = YES;
     configration.showTabbar = YES;//设置显示tabbar
     
     //创建控制器
-    YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
+    YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面",@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
     //头部视图
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
     imageView.image = [UIImage imageNamed:@"QYPPMyContributeListHead"];
@@ -152,7 +152,7 @@
     YNTestThreeViewController *three1 = [[YNTestThreeViewController alloc]init];
     
     YNTestFourViewController *four1 = [[YNTestFourViewController alloc]init];
-    return @[one,two,three,four,one1,two1,three1,four1];
+    return @[one,two,three,four,one1,two1,three1,four1,one,two,three,four,one1,two1,three1,four1];
 }
 
 

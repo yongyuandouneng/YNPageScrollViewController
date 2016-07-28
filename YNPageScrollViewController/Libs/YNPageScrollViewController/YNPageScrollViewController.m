@@ -214,6 +214,7 @@
     [self.displayDictionaryM setObject:viewController forKey:@(index)];
     
     UIScrollView *scrollView = [self getScrollViewForDataSource];
+
     if (![viewController isKindOfClass:[UITableViewController class]]) {
         
         scrollView.frame = CGRectMake(0, 0, self.parentScrollView.yn_width, self.parentScrollView.yn_height);
@@ -233,7 +234,8 @@
         [self.cacheDictionaryM setObject:viewController forKey:@(index)];
         
         if ([self isSuspensionStyle]) {
-            [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)(@(index))];
+            
+            [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)(scrollView)];
             
             if (self.placeHoderView) {
                 self.placeHoderView.yn_height = self.view.yn_height;
@@ -260,9 +262,8 @@
     
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
-    NSInteger index =  [(__bridge NSNumber *)context integerValue];
-    if (index != self.pageIndex) return;
+    UIScrollView *scrollView = (__bridge id)context;
+    if ([self getScrollViewForDataSource] != scrollView)return;
     CGFloat newValue = [[change objectForKey:NSKeyValueChangeNewKey] CGPointValue].y;
     CGFloat oldValue = [[change objectForKey:NSKeyValueChangeOldKey] CGPointValue].y;
     
