@@ -19,6 +19,12 @@ pod 'YNPageScrollViewController'
 
 如果发现pod search YNPageScrollViewController 搜索出来的不是最新版本，需要在终端执行cd转换文件路径命令退回到desktop，然后执行pod setup命令更新本地spec缓存（可能需要几分钟），然后再搜索就可以了
 
+###版本更新:
+---
+1.0.2：
+     修改悬浮式假数据高度、提供线条距离底部、宽度配置、修改其他BUG、修改了缓存机制、新增三个用来操作title和vc的Api。
+
+
 ###怎么样使用呢？
 ---
 
