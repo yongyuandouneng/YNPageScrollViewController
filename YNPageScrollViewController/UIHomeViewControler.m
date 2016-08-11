@@ -30,8 +30,8 @@
     
     [super viewDidLoad];
     
-//        [self.navigationController.navigationBar setTranslucent:NO];
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+    //        [self.navigationController.navigationBar setTranslucent:NO];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -44,7 +44,7 @@
         YNJianShuDemoViewController *viewController = [self getJianShuDemoViewController];
         [viewController addSelfToParentViewController:self isAfterLoadData:YES];
         
-
+        
     });
     
 }
@@ -54,7 +54,7 @@
     [super viewWillLayoutSubviews];
     
     NSLog(@"%@",[NSValue valueWithCGRect:self.view.frame]);
-
+    
 }
 
 - (void)viewDidLayoutSubviews{
@@ -84,7 +84,7 @@
     configration.showTabbar = YES;//设置显示tabbar
     
     //创建控制器
-    YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面",@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
+    YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
     //头部视图
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
     imageView.image = [UIImage imageNamed:@"QYPPMyContributeListHead"];
@@ -152,7 +152,7 @@
     YNTestThreeViewController *three1 = [[YNTestThreeViewController alloc]init];
     
     YNTestFourViewController *four1 = [[YNTestFourViewController alloc]init];
-    return @[one,two,three,four,one1,two1,three1,four1,one,two,three,four,one1,two1,three1,four1];
+    return @[one,two,three,four,one1,two1,three1,four1];
 }
 
 
@@ -167,50 +167,9 @@
         _loadingView.center = self.view.center;
         [self.view addSubview:_loadingView];
     }
-
+    
     return _loadingView;
 }
-
-//半塘Demo
-- (UIViewController *)getBanTangViewController{
-    
-    YNTestOneViewController *one = [[YNTestOneViewController alloc]init];
-    
-    YNTestTwoViewController *two = [[YNTestTwoViewController alloc]init];
-    
-    YNTestThreeViewController *three = [[YNTestThreeViewController alloc]init];
-    
-    YNTestFourViewController *four = [[YNTestFourViewController alloc]init];
-    
-    
-    //配置信息
-    YNPageScrollViewMenuConfigration *configration = [[YNPageScrollViewMenuConfigration alloc]init];
-    configration.scrollViewBackgroundColor = [UIColor redColor];
-    configration.itemLeftAndRightMargin = 30;
-    configration.lineColor = [UIColor blackColor];
-    configration.lineHeight = 4;
-    configration.showConver = YES;
-    configration.itemMaxScale = 1.2;
-    configration.pageScrollViewMenuStyle = YNPageScrollViewMenuStyleSuspension;
-    configration.showNavigation = NO;//设置没有导航条
-    
-    NSArray *imagesURLStrings = @[
-                                  @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-                                  @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-                                  @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"];
-    
-    
-    //头部headerView
-    SDCycleScrollView *headerView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 200) imageURLStringsGroup:imagesURLStrings];
-    headerView2.delegate = self;
-    YNBanTangDemoViewController *vc = [YNBanTangDemoViewController pageScrollViewControllerWithControllers:@[one,two,three,four] titles:@[@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
-    vc.dataSource = self;
-    
-    vc.headerView = headerView2;
-    
-    return vc;
-}
-
 
 
 

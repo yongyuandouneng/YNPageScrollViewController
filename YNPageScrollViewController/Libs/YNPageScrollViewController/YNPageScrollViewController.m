@@ -14,9 +14,9 @@
 
 @interface YNPageScrollViewController ()<UIScrollViewDelegate, YNPageScrollViewMenuDelegate, UITableViewDelegate,YNPageScrollViewControllerDelegate>
 {
-   BOOL _isAsChildViewController ;
+    BOOL _isAsChildViewController ;
     
-   BOOL _isAfterLoadData;
+    BOOL _isAfterLoadData;
 }
 /** 控制器缓存*/
 @property (nonatomic, strong) NSMutableDictionary *cacheDictionaryM;
@@ -44,7 +44,6 @@
 @property (nonatomic, assign) BOOL isHeaderViewInTempHeaderView;
 
 @property (nonatomic, assign) BOOL islockObserveParam;
-
 
 @end
 
@@ -76,21 +75,21 @@
     if (!self.scrollViewMenu) {
         
         if (_isAsChildViewController && _isAfterLoadData) {
-                    if (self.navigationController.navigationBar.isTranslucent) {
-                            CGFloat deltaHeight =  self.configration.showNavigation ? kYNPageNavHeight : 0;
-                            CGFloat dHeight  =  (self.configration.showTabbar ? kYNPageTabbarHeight : 0);
-                            self.view.yn_y =self.parentViewController.edgesForExtendedLayout != UIRectEdgeNone ?  deltaHeight : 0;
-                            self.view.yn_height =self.view.yn_height -  deltaHeight - dHeight;
-                    }else{
-                        CGFloat deltaHeight =  self.configration.showNavigation ? kYNPageNavHeight : 0;
-                        CGFloat dHeight  =  (self.configration.showTabbar ? kYNPageTabbarHeight : 0);
-                        self.view.yn_height =self.view.yn_height -  deltaHeight - dHeight;
-                    }
+            if (self.navigationController.navigationBar.isTranslucent) {
+                CGFloat deltaHeight =  self.configration.showNavigation ? kYNPageNavHeight : 0;
+                CGFloat dHeight  =  (self.configration.showTabbar ? kYNPageTabbarHeight : 0);
+                self.view.yn_y =self.parentViewController.edgesForExtendedLayout != UIRectEdgeNone ?  deltaHeight : 0;
+                self.view.yn_height =self.view.yn_height -  deltaHeight - dHeight;
+            }else{
+                CGFloat deltaHeight =  self.configration.showNavigation ? kYNPageNavHeight : 0;
+                CGFloat dHeight  =  (self.configration.showTabbar ? kYNPageTabbarHeight : 0);
+                self.view.yn_height =self.view.yn_height -  deltaHeight - dHeight;
+            }
         }
         self.parentScrollView.frame = CGRectMake(0, [self isTopStyle] ? self.configration.menuHeight : 0, self.view.yn_width, ([self isTopStyle] ? self.view.yn_height - self.configration.menuHeight: self.view.yn_height));
         
         self.parentScrollView.contentSize = CGSizeMake(self.view.yn_width * self.viewControllers.count, self.view.yn_height   - ([self isTopStyle] ? self.configration.menuHeight : 0));
-    
+        
         
         if ([self isSuspensionStyle]) {
             //初始化headerView
@@ -109,13 +108,13 @@
             
             
             self.originHeaderOffSetY = self.scrollViewMenu.yn_y;
-    
+            
         }else if ([self isTopStyle]){
-    
+            
             [self initPageScrollViewMenuWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.configration.menuHeight)];
         }
     }
-
+    
 }
 
 - (void)viewWillLayoutSubviews{
@@ -124,7 +123,6 @@
     
     [self configUI];
     
-//    [self setPageScrollViewMenuSelectPageIndex:self.pageIndex animated:NO];
 }
 
 
@@ -189,10 +187,10 @@
     self.currentViewController = self.viewControllers[index];
     
     self.pageIndex = index;
+    NSString *title = [self titleWithIndex:index];
+    if ([self.displayDictionaryM objectForKey:title]) return;
     
-    if ([self.displayDictionaryM objectForKey:@(index)]) return;
-    
-    UIViewController * cacheViewController = [self.cacheDictionaryM objectForKey:@(index)];
+    UIViewController * cacheViewController = [self.cacheDictionaryM objectForKey:title];
     if (cacheViewController) {
         [self addViewControllerToParentScrollView:cacheViewController index:index];
     }
@@ -211,10 +209,12 @@
     
     [self didMoveToParentViewController:viewController];
     
-    [self.displayDictionaryM setObject:viewController forKey:@(index)];
+    NSString *title = [self titleWithIndex:index];
+    
+    [self.displayDictionaryM setObject:viewController forKey:title];
     
     UIScrollView *scrollView = [self getScrollViewForDataSource];
-
+    
     if (![viewController isKindOfClass:[UITableViewController class]]) {
         
         scrollView.frame = CGRectMake(0, 0, self.parentScrollView.yn_width, self.parentScrollView.yn_height);
@@ -229,9 +229,9 @@
         }
     }
     
-    if (![self.cacheDictionaryM objectForKey:@(index)]) {//缓存
+    if (![self.cacheDictionaryM objectForKey:title]) {//缓存
         
-        [self.cacheDictionaryM setObject:viewController forKey:@(index)];
+        [self.cacheDictionaryM setObject:viewController forKey:title];
         
         if ([self isSuspensionStyle]) {
             
@@ -244,20 +244,19 @@
                 [self reloadPlaceHoderViewFrame];
             }
         }
-        
     }
-    
 }
 
 - (void)removeViewControllerToParentScrollView:(UIViewController *)viewController index:(NSInteger)index{
     
-    [viewController.view removeFromSuperview];
-    [viewController willMoveToParentViewController:nil];
-    [viewController removeFromParentViewController];
-    [self.displayDictionaryM removeObjectForKey:@(index)];
+    [self removeVCWithFromVC:viewController];
     
-    if (![self.cacheDictionaryM objectForKey:@(index)]) {
-        [self.cacheDictionaryM setObject:viewController forKey:@(index)];
+    NSString *title = [self titleWithIndex:index];
+    
+    [self.displayDictionaryM removeObjectForKey:title];
+    
+    if (![self.cacheDictionaryM objectForKey:title]) {
+        [self.cacheDictionaryM setObject:viewController forKey:title];
     }
     
 }
@@ -275,9 +274,10 @@
         
         if (y <= deltaHeight) {
             
+            NSString *title = [self titleWithIndex:self.pageIndex];
             progress = 1;
             self.scrollViewMenu.yn_y = deltaHeight;
-            [self.contentOffsetDictionaryM setObject:@(newValue) forKey:@(self.pageIndex)];
+            [self.contentOffsetDictionaryM setObject:@(newValue) forKey:title];
             
         }else{
             
@@ -297,11 +297,12 @@
 
 #pragma mark - UIScrollViewDelegate
 
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     if ([self isSuspensionStyle]) {
         [self replaceTableViewHeaderView];
+    
+        [self reloadPlaceHoderViewFrame];
     }else{
         [self removeViewController];
         [self.scrollViewMenu adjustItemPositionWithCurrentIndex:self.pageIndex];
@@ -312,7 +313,6 @@
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
     
     if (self.lockDidScrollView) return;
     
@@ -334,14 +334,16 @@
     
     [self updateSubViewScrollViewContentInset];
     
+    
 }
 
 - (void)removeViewController{
     
     for (int i = 0; i < self.viewControllers.count; i ++) {
         if (i != self.pageIndex) {
-            if(self.displayDictionaryM[@(i)]){
-                [self removeViewControllerToParentScrollView:self.displayDictionaryM[@(i)] index:i];
+            NSString *title = [self titleWithIndex:i];
+            if(self.displayDictionaryM[title]){
+                [self removeViewControllerToParentScrollView:self.displayDictionaryM[title] index:i];
             }
         }
     }
@@ -400,7 +402,7 @@
 - (void)replaceTableViewHeaderView{
     
     if (self.bigHeaderView.subviews.count == 0) {
-    
+        
         UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
         
         self.islockObserveParam = YES;
@@ -409,14 +411,16 @@
         [self.tempHeaderView removeAllSubviews];
         [self.headerView removeFromSuperview];
         [self.bigHeaderView addSubview:self.headerView];
-    
+        
         tableView.tableHeaderView = nil;
         tableView.tableHeaderView = self.bigHeaderView;
         
         self.islockObserveParam = NO;
         
-        if ([self.contentOffsetDictionaryM objectForKey:@(self.pageIndex)]) {
-            tableView.contentOffset = CGPointMake(0, [[self.contentOffsetDictionaryM objectForKey:@(self.pageIndex)] floatValue]);
+        NSString *title = [self titleWithIndex:self.pageIndex];
+        
+        if ([self.contentOffsetDictionaryM objectForKey:title]) {
+            tableView.contentOffset = CGPointMake(0, [[self.contentOffsetDictionaryM objectForKey:title] floatValue]);
         }else{
             tableView.contentOffset = CGPointMake(0, self.contentoffSetY);
         }
@@ -441,8 +445,11 @@
     if (![self isSuspensionStyle]) return;
     CGFloat deltaHeight =  self.configration.showNavigation ? 0 : kYNPageNavHeight;
     if (self.scrollViewMenu.yn_y  == deltaHeight) {//临界点
-        if ([self.contentOffsetDictionaryM objectForKey:@(self.pageIndex)]) {
-            [self getScrollViewForDataSource].contentOffset = CGPointMake(0, [[self.contentOffsetDictionaryM objectForKey:@(self.pageIndex)] floatValue]);
+        
+        NSString *title = [self titleWithIndex:self.pageIndex];
+        
+        if ([self.contentOffsetDictionaryM objectForKey:title]) {
+            [self getScrollViewForDataSource].contentOffset = CGPointMake(0, [[self.contentOffsetDictionaryM objectForKey:title] floatValue]);
         }else{
             
             [self getScrollViewForDataSource].contentOffset = CGPointMake(0,self.originHeaderOffSetY - deltaHeight);
@@ -459,8 +466,8 @@
 + (instancetype)pageScrollViewControllerWithControllers:(NSArray *)viewControllers titles:(NSArray *)titleArrayM Configration:(YNPageScrollViewMenuConfigration *)configration{
     
     YNPageScrollViewController *viewController =  [[self alloc]init];
-    viewController.viewControllers = viewControllers;
-    viewController.titleArrayM = titleArrayM;
+    viewController.viewControllers = viewControllers.mutableCopy;
+    viewController.titleArrayM = titleArrayM.mutableCopy;
     viewController.configration = configration ? configration : [YNPageScrollViewMenuConfigration pageScrollViewMenuConfigration];
     
     return viewController;
@@ -474,14 +481,72 @@
     
 }
 
-- (void)addAddButtonViewController:(UIViewController *)viewController{
+- (void)addPageScrollViewControllerWithTitle:(NSString *)title viewController:(UIViewController *)viewController{
     
-    [self addChildVCWithFromVC:viewController toVC:self];
+    [self.titleArrayM addObject:title];
+    [self.viewControllers addObject:viewController];
+    
+    [self.scrollViewMenu removeFromSuperview];
+    self.scrollViewMenu = nil;
+    self.DidLayoutSubviews = NO;
+    [self configUI];
+    
+    
+    NSInteger currentPage = self.pageIndex;
+    //TODO 暂时
+    [self setPageScrollViewMenuSelectPageIndex:0 animated:NO];
+    
+    [self setPageScrollViewMenuSelectPageIndex:currentPage animated:NO];
+    
 }
 
-- (void)removeAddButtonViewController:(UIViewController *)viewController{
+- (void)removePageScrollControllerWithTtitle:(NSString *)title viewController:(UIViewController *)viewController{
     
-    [self removeVCWithFromVC:viewController];
+    [self.titleArrayM removeObject:title];
+    [self.viewControllers removeObject:viewController];
+    
+    [self.scrollViewMenu removeFromSuperview];
+    self.scrollViewMenu = nil;
+    self.DidLayoutSubviews = NO;
+    [self configUI];
+    
+    NSInteger currentPage = self.pageIndex;
+    //TODO 暂时
+    [self setPageScrollViewMenuSelectPageIndex:0 animated:NO];
+    
+    [self setPageScrollViewMenuSelectPageIndex:currentPage animated:NO];
+    
+    
+}
+
+- (void)removePageScrollControllerWithTtitle:(NSString *)title{
+    
+    NSInteger index = -1;
+    for (NSInteger i = 0; i < self.titleArrayM.count; i++) {
+        if ([self.titleArrayM[i] isEqualToString:title]) {
+            index = i;
+            break;
+        }
+    }
+    
+    [self removePageScrollControllerWithIndex:index];
+    
+}
+
+
+- (void)removePageScrollControllerWithIndex:(NSInteger)index{
+    
+    if (index < 0 || index >= self.titleArrayM.count || self.titleArrayM.count == 1) return;
+    
+    if (self.pageIndex >= index) {
+        
+        self.pageIndex--;
+        if (self.pageIndex < 0) {
+            self.pageIndex = 0 ;
+        }
+    }
+    [self removePageScrollControllerWithTtitle:self.titleArrayM[index] viewController:self.viewControllers[index]];
+    
     
 }
 
@@ -499,29 +564,41 @@
 
 - (void)reloadPlaceHoderViewFrame{
     
-    if (self.placeHoderView) {
-        UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
-        CGFloat deltaHeight =  self.configration.showNavigation ? 0 : kYNPageNavHeight;
-        if (tableView.contentSize.height > self.parentScrollView.yn_height) {
-            CGFloat height = tableView.contentSize.height - self.placeHoderView.yn_height - self.headerView.yn_height;
-            if (height > self.parentScrollView.yn_height) {
+    if (self.placeHoderView && [self isSuspensionStyle]) {
+         UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
+            CGFloat deltaHeight =  self.configration.showNavigation ? 0 : kYNPageNavHeight;
+            if (tableView.contentSize.height > self.parentScrollView.yn_height) {
                 
-                tableView.tableFooterView = nil;
+                CGFloat footerHeight = (tableView.tableFooterView == nil ? 0 : self.placeHoderView.yn_height) ;
+                
+                CGFloat height = tableView.contentSize.height - footerHeight - self.headerView.yn_height;
+                if (height > self.parentScrollView.yn_height) {
+                    
+                    tableView.tableFooterView = nil;
+                }else{
+                    
+                    self.placeHoderView.yn_height = self.parentScrollView.yn_height - height  -deltaHeight;
+                    tableView.tableFooterView = self.placeHoderView;
+                }
             }else{
                 
-                self.placeHoderView.yn_height = self.parentScrollView.yn_height - height  -deltaHeight;
+                self.placeHoderView.yn_height = self.parentScrollView.yn_height - tableView.contentSize.height + self.headerView.yn_height -deltaHeight;
                 tableView.tableFooterView = self.placeHoderView;
             }
-        }else{
-            
-            self.placeHoderView.yn_height = self.parentScrollView.yn_height - tableView.contentSize.height + self.headerView.yn_height -deltaHeight;
-            tableView.tableFooterView = self.placeHoderView;
-        }
     }
 }
 
-- (void)addPageScrollViewControllerWithTitle:(NSString *)title{
+- (void)reloadHeaderViewFrame{
     
+    if (self.headerView && [self isSuspensionStyle]) {
+        [self.scrollViewMenu removeFromSuperview];
+        self.scrollViewMenu = nil;
+        [self.contentOffsetDictionaryM removeAllObjects];
+        [self configUI];
+
+        [[self getScrollViewForDataSource] setContentOffset:CGPointMake(0, 0)];
+    }
+
 }
 
 #pragma mark - Private Method
@@ -533,6 +610,23 @@
     NSAssert(self.titleArrayM.count != 0 || self.titleArrayM, @"titleArray`count is 0 or nil,");
     
     NSAssert(self.viewControllers.count == self.titleArrayM.count, @"ViewControllers`count is  not equal titleArray!");
+    
+    BOOL isHasNotEqualTitle = YES;
+    for (int i = 0; i < self.titleArrayM.count; i++) {
+        for (int j = 1; j < self.titleArrayM.count; j++) {
+            
+            if (i != j && [self.titleArrayM[i] isEqualToString:self.titleArrayM[j]]) {
+                isHasNotEqualTitle = NO;
+                break;
+            }
+        }
+    }
+    NSAssert(isHasNotEqualTitle, @"titleArray Not allow equal title.");
+}
+
+- (NSString *)titleWithIndex:(NSInteger)index{
+    
+    return  self.titleArrayM[index];
     
 }
 
@@ -550,7 +644,7 @@
 
 
 - (void)addChildVCWithFromVC:(UIViewController *)fromVC toVC:(UIViewController *)toVC{
-
+    
     [toVC addChildViewController:fromVC];
     [toVC didMoveToParentViewController:fromVC];
     [toVC.view addSubview:fromVC.view];
@@ -634,17 +728,16 @@
         _scrollViewCacheDictionryM = [NSMutableDictionary dictionaryWithCapacity:self.viewControllers.count];
     }
     return _scrollViewCacheDictionryM;
-
+    
 }
 
 #pragma mark - dealloc
 - (void)dealloc{
     if ([self isSuspensionStyle]) {
-        [self.cacheDictionaryM.allKeys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            self.currentViewController = self.cacheDictionaryM[obj];
-            self.pageIndex = [obj integerValue];
-            
-            [[self getScrollViewForDataSource] removeObserver:self forKeyPath:@"contentOffset"];
+        
+        [self.scrollViewCacheDictionryM.allValues enumerateObjectsUsingBlock:^(UITableView *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+            [obj removeObserver:self forKeyPath:@"contentOffset"];
         }];
     }
     
@@ -655,21 +748,21 @@
 
 #pragma mark - 获取滚动视图
 - (UIScrollView *)getScrollViewForDataSource{
-    
-    if (![self.scrollViewCacheDictionryM objectForKey:@(self.pageIndex)]) {
-    
+    NSString *title = [self titleWithIndex:self.pageIndex];
+    if (![self.scrollViewCacheDictionryM objectForKey:title]) {
+        
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageScrollViewController:scrollViewForIndex:)]) {
             UIScrollView *scrollView = [self.dataSource pageScrollViewController:self scrollViewForIndex:self.pageIndex];
             if (scrollView && [scrollView isKindOfClass:[UIScrollView class]]) {
                 if (self.configration.pageScrollViewMenuStyle == YNPageScrollViewMenuStyleSuspension) {
                     NSAssert([scrollView isKindOfClass:[UITableView class]], @"暂时只支持设置UITableView");
                 }
-                [self.scrollViewCacheDictionryM setObject:scrollView forKey:@(self.pageIndex)];
+                [self.scrollViewCacheDictionryM setObject:scrollView forKey:title];
                 return scrollView;
             }
         }
     }else{
-        return [self.scrollViewCacheDictionryM objectForKey:@(self.pageIndex)];
+        return [self.scrollViewCacheDictionryM objectForKey:title];
     }
     
     NSAssert(0 != 0,@"请设置数据源");
@@ -688,9 +781,9 @@
 - (void)getTableViewEndRefresh{
     
     if (self.currentViewController&&self.dataSource && [self.dataSource respondsToSelector:@selector(pageScrollViewController:scrollViewHeaderAndFooterEndRefreshForIndex:)]) {
-         [self.dataSource pageScrollViewController:self scrollViewHeaderAndFooterEndRefreshForIndex:self.pageIndex];
+        [self.dataSource pageScrollViewController:self scrollViewHeaderAndFooterEndRefreshForIndex:self.pageIndex];
     }
-
+    
 }
 
 @end

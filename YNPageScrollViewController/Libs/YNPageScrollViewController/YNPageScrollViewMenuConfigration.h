@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
     YNPageScrollViewMenuStyleTop        = 0,//顶部  默认
     YNPageScrollViewMenuStyleNavigation = 1,//导航条
     YNPageScrollViewMenuStyleSuspension = 2,//悬浮
-
+    
 };
 
 @interface YNPageScrollViewMenuConfigration : NSObject
@@ -36,7 +36,10 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, assign) BOOL scrollMenu;
 /** 菜单弹簧效果 NO */
 @property (nonatomic, assign) BOOL bounces;
-/** 是否是居中 (当所有的Item+margin的宽度小于ScrollView宽度) 默认 YES*/
+/**
+ *  是否是居中 (当所有的Item+margin的宽度小于ScrollView宽度)  默认 YES
+ *  scrollMenu = NO,aligmentModeCenter = NO 会变成平分
+ */
 @property (nonatomic, assign) BOOL aligmentModeCenter;
 /** 按钮N图片*/
 @property (nonatomic, copy) NSString *addButtonNormalImageName;
@@ -56,6 +59,10 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, strong) UIColor *selectedItemColor;
 /** 线height 2 */
 @property (nonatomic, assign) CGFloat lineHeight;
+/** 线条底部距离 0*/
+@property (nonatomic, assign) CGFloat lineBottomMargin;
+/** 线条左右增加 0  默认线条宽度是等于 item宽度*/
+@property (nonatomic, assign) CGFloat lineLeftAndRightAddWidth;
 /** 遮盖height 28 */
 @property (nonatomic, assign) CGFloat converHeight;
 /** 菜单height */

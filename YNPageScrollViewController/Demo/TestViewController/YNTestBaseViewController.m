@@ -72,8 +72,10 @@
             NSLog(@"上啦加载完成");
             [weakself.tableView.mj_header endRefreshing];
             [weakself.tableView reloadData];
-            [self.indicatorView stopAnimating];
-            self.label.hidden = NO;
+            //调整占位图footer
+            [weakself.ynPageScrollViewController reloadPlaceHoderViewFrame];
+            [weakself.indicatorView stopAnimating];
+            weakself.label.hidden = NO;
         });
     }];
 
@@ -92,10 +94,13 @@
             }
             NSLog(@"下拉加载完成");
             [weakself.tableView.mj_footer endRefreshing];
-            [weakself.tableView reloadData];
             
-            [self.indicatorView stopAnimating];
-            self.label.hidden = NO;
+            [weakself.tableView reloadData];
+            //调整占位图footer
+            [weakself.ynPageScrollViewController reloadPlaceHoderViewFrame];
+            
+            [weakself.indicatorView stopAnimating];
+            weakself.label.hidden = NO;
         });
     }];
     

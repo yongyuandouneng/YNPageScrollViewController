@@ -36,9 +36,9 @@
 @implementation YNPageScrollViewMenu
 
 + (instancetype)pageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate currentIndex:(NSInteger)currentIndex{
-
-   return [[YNPageScrollViewMenu alloc] initPageScrollViewMenuWithFrame:frame titles:titlesArray Configration:configration delegate:delegate currentIndex:currentIndex];
-
+    
+    return [[YNPageScrollViewMenu alloc] initPageScrollViewMenuWithFrame:frame titles:titlesArray Configration:configration delegate:delegate currentIndex:currentIndex];
+    
 }
 
 - (instancetype)initPageScrollViewMenuWithFrame:(CGRect)frame titles:(NSArray *)titlesArray Configration:(YNPageScrollViewMenuConfigration *)configration delegate:(id)delegate currentIndex:(NSInteger)currentIndex{
@@ -50,9 +50,9 @@
         frame.size.height = self.configration.menuHeight;
     }
     self = [super initWithFrame:frame];
-
+    
     if (self) {
-       
+        
         [self initMenuItems];
         [self configUI];
         
@@ -65,7 +65,7 @@
 - (void)initMenuItems{
     
     [self.titlesArray enumerateObjectsUsingBlock:^(id  _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
-       
+        
         UILabel *itemLabel = [[UILabel alloc]init];
         itemLabel.font = self.configration.itemFont;
         itemLabel.textColor = self.configration.normalItemColor;
@@ -105,62 +105,62 @@
     __block CGFloat itemH = self.yn_height - self.configration.lineHeight;
     
     [self.itemsArrayM enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (idx == 0) {
-                itemX += self.configration.itemLeftAndRightMargin;
-            }else{
-                itemX += self.configration.itemMargin + [self.itemsWidthArraM[idx - 1] floatValue];
-            }
-            label.frame = CGRectMake(itemX, itemY, [self.itemsWidthArraM[idx] floatValue], itemH);
-
+        if (idx == 0) {
+            itemX += self.configration.itemLeftAndRightMargin;
+        }else{
+            itemX += self.configration.itemMargin + [self.itemsWidthArraM[idx - 1] floatValue];
+        }
+        label.frame = CGRectMake(itemX, itemY, [self.itemsWidthArraM[idx] floatValue], itemH);
+        
     }];
     
-        CGFloat scrollSizeWidht = self.configration.itemLeftAndRightMargin + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]);
-        if (scrollSizeWidht < self.scrollView.yn_width) {//不超出宽度
-            itemX = 0;
-            itemY = 0;
-            itemW = 0;
+    CGFloat scrollSizeWidht = self.configration.itemLeftAndRightMargin + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]);
+    if (scrollSizeWidht < self.scrollView.yn_width) {//不超出宽度
+        itemX = 0;
+        itemY = 0;
+        itemW = 0;
+        
+        CGFloat left = 0;
+        
+        for (NSNumber *width in self.itemsWidthArraM) {
+            left += [width floatValue];
+        }
+        
+        left = (self.scrollView.yn_width - left - self.configration.itemMargin * (self.itemsWidthArraM.count-1)) * 0.5;
+        if (self.configration.aligmentModeCenter && left >= 0) {//居中且有剩余间距
             
-            CGFloat left = 0;
+            self.configration.itemLeftAndRightMargin = left;
             
-            for (NSNumber *width in self.itemsWidthArraM) {
-                left += [width floatValue];
-            }
-            
-            left = (self.scrollView.yn_width - left - self.configration.itemMargin * (self.itemsWidthArraM.count-1)) * 0.5;
-            if (self.configration.aligmentModeCenter && left >= 0) {//居中且有剩余间距
-   
-                self.configration.itemLeftAndRightMargin = left;
+            [self.itemsArrayM enumerateObjectsUsingBlock:^(UILabel  * label, NSUInteger idx, BOOL * _Nonnull stop) {
                 
+                if (idx == 0) {
+                    itemX += self.configration.itemLeftAndRightMargin;
+                }else{
+                    itemX += self.configration.itemMargin + [self.itemsWidthArraM[idx - 1] floatValue];
+                }
+                label.frame = CGRectMake(itemX, itemY, [self.itemsWidthArraM[idx] floatValue], itemH);
+            }];
+            
+            self.scrollView.contentSize = CGSizeMake(self.configration.itemLeftAndRightMargin + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
+            
+        }else{//否则按原来样子
+            if (!self.configration.scrollMenu) {//不能滚动则平分
                 [self.itemsArrayM enumerateObjectsUsingBlock:^(UILabel  * label, NSUInteger idx, BOOL * _Nonnull stop) {
                     
-                    if (idx == 0) {
-                            itemX += self.configration.itemLeftAndRightMargin;
-                    }else{
-                        itemX += self.configration.itemMargin + [self.itemsWidthArraM[idx - 1] floatValue];
-                    }
-                        label.frame = CGRectMake(itemX, itemY, [self.itemsWidthArraM[idx] floatValue], itemH);
+                    itemW = self.scrollView.yn_width / self.itemsArrayM.count;
+                    itemX = itemW *idx;
+                    label.frame = CGRectMake(itemX, itemY, itemW, itemH);
                 }];
                 
-                self.scrollView.contentSize = CGSizeMake(self.configration.itemLeftAndRightMargin + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
+                self.scrollView.contentSize = CGSizeMake(CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
                 
-            }else{//否则按原来样子
-                if (!self.configration.scrollMenu) {//不能滚动则平分
-                    [self.itemsArrayM enumerateObjectsUsingBlock:^(UILabel  * label, NSUInteger idx, BOOL * _Nonnull stop) {
-                        
-                        itemW = self.scrollView.yn_width / self.itemsArrayM.count;
-                        itemX = itemW *idx;
-                        label.frame = CGRectMake(itemX, itemY, itemW, itemH);
-                    }];
-                    
-                    self.scrollView.contentSize = CGSizeMake(CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
-                    
-                }else{
-                    self.scrollView.contentSize = CGSizeMake(scrollSizeWidht, self.scrollView.yn_height);
-                }
+            }else{
+                self.scrollView.contentSize = CGSizeMake(scrollSizeWidht, self.scrollView.yn_height);
             }
-        }else{//大于scrollView的width·
-            self.scrollView.contentSize = CGSizeMake(scrollSizeWidht, self.scrollView.yn_height);
         }
+    }else{//大于scrollView的width·
+        self.scrollView.contentSize = CGSizeMake(scrollSizeWidht, self.scrollView.yn_height);
+    }
     
     CGFloat lineX = [(UILabel *)[self.itemsArrayM firstObject] yn_x];
     CGFloat lineY = self.scrollView.yn_height - self.configration.lineHeight;
@@ -175,7 +175,7 @@
     }
     
     if (self.configration.showScrollLine) {
-        self.lineView.frame = CGRectMake(lineX, lineY, lineW, lineH);
+        self.lineView.frame = CGRectMake(lineX - self.configration.lineLeftAndRightAddWidth, lineY - self.configration.lineBottomMargin, lineW + self.configration.lineLeftAndRightAddWidth * 2, lineH);
         [self.scrollView addSubview:self.lineView];
     }
     
@@ -183,10 +183,38 @@
         ((UILabel *)self.itemsArrayM[0]).transform = CGAffineTransformMakeScale(self.configration.itemMaxScale, self.configration.itemMaxScale);
     }
     
+    [self setDefaultTheme];
+    
+    
     [self selectedItemIndex:self.currentIndex animated:NO];
     
 }
 
+- (void)setDefaultTheme{
+    
+    UILabel *currentLabel = self.itemsArrayM[self.currentIndex];
+    
+    //缩放
+    if (self.configration.itemMaxScale > 1) {
+        currentLabel.transform = CGAffineTransformMakeScale(self.configration.itemMaxScale, self.configration.itemMaxScale);
+    }
+    //颜
+    currentLabel.textColor = self.configration.selectedItemColor;
+    
+    //线条
+    if (self.configration.showScrollLine) {
+        self.lineView.yn_x = currentLabel.yn_x - self.configration.lineLeftAndRightAddWidth;
+        self.lineView.yn_width = currentLabel.yn_width + self.configration.lineLeftAndRightAddWidth *2;
+    }
+    //遮盖
+    if (self.configration.showConver) {
+        self.converView.yn_x = currentLabel.yn_x - converMarginX;
+        self.converView.yn_width = currentLabel.yn_width +converMarginW;
+    }
+    
+    self.lastIndex = self.currentIndex;
+    
+}
 
 #pragma mark - Action
 
@@ -211,7 +239,7 @@
 - (void)adjustItemWithAnimated:(BOOL)animated{
     
     if (self.lastIndex == self.currentIndex) return;
-  
+    
     [self adjustItemAnimate:animated];
 }
 
@@ -236,8 +264,8 @@
         
         //线条
         if (self.configration.showScrollLine) {
-            self.lineView.yn_x = currentLabel.yn_x;
-            self.lineView.yn_width = currentLabel.yn_width;
+            self.lineView.yn_x = currentLabel.yn_x - self.configration.lineLeftAndRightAddWidth;
+            self.lineView.yn_width = currentLabel.yn_width + self.configration.lineLeftAndRightAddWidth *2;
         }
         //遮盖
         if (self.configration.showConver) {
@@ -275,7 +303,7 @@
     }
     
     if (self.configration.showGradientColor) {
-      
+        
         //颜色渐变
         [self.configration setRGBWithProgress:progress];
         
@@ -294,11 +322,11 @@
     
     CGFloat xD = currentLabel.yn_x - lastLabel.yn_x;
     CGFloat wD = currentLabel.yn_width - lastLabel.yn_width;
-            
+    
     //线条
     if (self.configration.showScrollLine) {
-        self.lineView.yn_x = lastLabel.yn_x + xD *progress;
-        self.lineView.yn_width = lastLabel.yn_width + wD *progress;
+        self.lineView.yn_x = lastLabel.yn_x + xD *progress - self.configration.lineLeftAndRightAddWidth;
+        self.lineView.yn_width = lastLabel.yn_width + wD *progress + self.configration.lineLeftAndRightAddWidth *2;
     }
     //遮盖
     if (self.configration.showConver) {
@@ -309,9 +337,6 @@
 
 
 - (void)adjustItemPositionWithCurrentIndex:(NSInteger)index{
-    
-    
-    
     
     if (self.scrollView.contentSize.width != self.scrollView.yn_width + 20) {
         
@@ -331,6 +356,7 @@
         
     }
 }
+
 
 #pragma mark - lazy
 //线条

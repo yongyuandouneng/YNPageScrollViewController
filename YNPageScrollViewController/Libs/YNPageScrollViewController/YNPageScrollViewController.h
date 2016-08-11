@@ -36,9 +36,9 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 
 @interface YNPageScrollViewController : UIViewController
 /** 控制器*/
-@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
 /** 菜单Menu标题*/
-@property (nonatomic, strong) NSArray *titleArrayM;
+@property (nonatomic, strong) NSMutableArray *titleArrayM;
 /** 当前控制器*/
 @property (nonatomic, strong) UIViewController *currentViewController;
 /** 当前index*/
@@ -64,29 +64,63 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-/** 初始化*/
+/**
+ *  初始化控制器
+ *
+ *  @param viewControllers 控制器数组
+ *  @param titleArrayM     菜单title数组
+ *  @param configration    配置信息
+ *
+ */
 + (instancetype)pageScrollViewControllerWithControllers:(NSArray *)viewControllers titles:(NSArray *)titleArrayM Configration:(YNPageScrollViewMenuConfigration *)configration;
 
-/** 选中第几页*/
+/**
+ *  选中第几页
+ *
+ *  @param index    第几页 从0开始
+ *  @param animated 是否动画
+ */
 - (void)setPageScrollViewMenuSelectPageIndex:(NSInteger)index animated:(BOOL)animated;
 
-/** 添加控制器子控制器 暂未实现*/
-- (void)addAddButtonViewController:(UIViewController *)viewController;
+/**
+ *  为YNPageScrollViewControoler添加一个title 控制器
+ *
+ *  @param title          菜单title
+ *  @param viewController 目标控制器
+ */
+- (void)addPageScrollViewControllerWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
 
-/** 移除控制器子控制器 暂未实现 */
-- (void)removeAddButtonViewController:(UIViewController *)viewController;
+/**
+ *  为YNPageScrollViewControoler移除一个title 控制器
+ *
+ *  @param title          菜单title
+ */
+- (void)removePageScrollControllerWithTtitle:(NSString *)title;
 
-/** 添加title 暂未实现*/
-- (void)addPageScrollViewControllerWithTitle:(NSString *)title;
+- (void)removePageScrollControllerWithIndex:(NSInteger)index;
 
-/** 当前PageScrollViewVC作为子控制器*/
+
+/**
+ *  当前PageScrollViewVC作为子控制器
+ *
+ *  @param parentViewControler 父类控制器
+ *  @param isAfterLoadData     是否是在加载数据之后
+ */
 - (void)addSelfToParentViewController:(UIViewController *)parentViewControler isAfterLoadData:(BOOL)isAfterLoadData;
 
-/** 移除PageScrollViewVC*/
+/**
+ *  从父类控制器里面移除自己（PageScrollViewVC）
+ */
 - (void)removeSelfViewController;
 
-
+/**
+ *  悬浮式：刷新TableFooter的补位Frame
+ */
 - (void)reloadPlaceHoderViewFrame;
 
+/**
+ *  悬浮式：刷新TableViewHeader的高度
+ */
+- (void)reloadHeaderViewFrame;
 
 @end

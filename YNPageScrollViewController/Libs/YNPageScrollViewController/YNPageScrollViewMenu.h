@@ -41,4 +41,5 @@
 - (void)selectedItemIndex:(NSInteger)index animated:(BOOL)animated;
 
 - (void)adjustItemWithAnimated:(BOOL)animated;
+
 @end

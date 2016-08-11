@@ -22,9 +22,9 @@
 
 
 + (instancetype)pageScrollViewMenuConfigration{
-
+    
     return [[self alloc] init];
-
+    
 }
 
 - (instancetype)init
@@ -57,7 +57,8 @@
         _itemLeftAndRightMargin = 15;
         _itemFont = [UIFont systemFontOfSize:14];
         _itemMaxScale = 0;
-        
+        _lineBottomMargin = 0;
+        _lineLeftAndRightAddWidth = 0;
         _tableViewResfreshAnimationTime = 0.4;
     }
     return self;
@@ -77,13 +78,13 @@
 }
 
 - (CGFloat)lineHeight{
-
+    
     return _showScrollLine ? _lineHeight : 0;
-
+    
 }
 
 - (CGFloat)deltaScale{
-
+    
     return _deltaScale = _itemMaxScale - 1.0;
 }
 

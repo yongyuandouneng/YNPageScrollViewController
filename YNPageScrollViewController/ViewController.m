@@ -105,7 +105,7 @@
         
     }else{
         vc = [[UIHomeViewControler alloc]init];
-//        vc.hidesBottomBarWhenPushed = YES;
+        //        vc.hidesBottomBarWhenPushed = YES;
         
     }
     
@@ -124,7 +124,7 @@
     
     YNTestFourViewController *four = [[YNTestFourViewController alloc]init];
     
-
+    
     //配置信息
     YNPageScrollViewMenuConfigration *configration = [[YNPageScrollViewMenuConfigration alloc]init];
     configration.scrollViewBackgroundColor = [UIColor redColor];
@@ -141,17 +141,27 @@
                                   @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
                                   @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"];
     
+    
 
-    //头部headerView
-    SDCycleScrollView *headerView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 200) imageURLStringsGroup:imagesURLStrings];
-    headerView2.delegate = self;
+    
+    
     YNBanTangDemoViewController *vc = [YNBanTangDemoViewController pageScrollViewControllerWithControllers:@[one,two,three,four] titles:@[@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
     vc.dataSource = self;
     
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 0)];
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 0)];
     footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     vc.placeHoderView = footerView;
+    
+    
+    //头部headerView
+    UIView *headerView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 200)];
+    //轮播器
+    SDCycleScrollView *autoScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 200) imageURLStringsGroup:imagesURLStrings];
+    autoScrollView.delegate = self;
+    
+    [headerView2 addSubview:autoScrollView];
     vc.headerView = headerView2;
+    
     
     return vc;
 }
@@ -167,6 +177,7 @@
     configration.itemLeftAndRightMargin = 30;
     configration.lineColor = [UIColor orangeColor];
     configration.lineHeight = 2;
+    configration.lineLeftAndRightAddWidth = 10;//线条宽度增加
     configration.itemMaxScale = 1.2;
     configration.pageScrollViewMenuStyle = YNPageScrollViewMenuStyleSuspension;
     configration.scrollViewBackgroundColor = [UIColor whiteColor];
@@ -194,6 +205,11 @@
     vc.headerView = imageView;
     
     vc.dataSource = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 250);
+        [vc reloadHeaderViewFrame];
+    });
     
     
     return vc;
@@ -248,8 +264,27 @@
     YNTopStyleViewController *vc = [YNTopStyleViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"新闻",@"搞笑视频",@"热门视频",@"有趣小事"] Configration:configration];
     vc.dataSource = self;
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+        YNTestOneViewController *one = [[YNTestOneViewController alloc]init];
+        
+        YNTestTwoViewController *two = [[YNTestTwoViewController alloc]init];
+        
+                [vc addPageScrollViewControllerWithTitle:@"添加第一个" viewController:one];
+        //        [vc addPageScrollViewControllerWithTitle:@"添加第二个" viewController:two];
+        
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [vc removePageScrollControllerWithIndex:2];
+        
+    });
+    
+    
     return vc;
-
+    
 }
 
 #pragma mark - YNPageScrollViewControllerDataSource
