@@ -11,5 +11,6 @@
 @interface YNPageScrollView : UIScrollView
 
 @property (nonatomic, assign) CGFloat headerViewHeight;
+@property (nonatomic, assign) BOOL gestureRecognizerShouldBegin;
 
 @end

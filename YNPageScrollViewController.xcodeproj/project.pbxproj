@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E95025F1D6D426D00106EC3 /* YNPageScrollHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E95025E1D6D426D00106EC3 /* YNPageScrollHeaderView.m */; };
 		2EA091FB1D45E90A000C75C5 /* UIView+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F01D45E90A000C75C5 /* UIView+YNCategory.m */; };
 		2EA091FC1D45E90A000C75C5 /* UIViewController+YNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F21D45E90A000C75C5 /* UIViewController+YNCategory.m */; };
 		2EA091FD1D45E90A000C75C5 /* YNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA091F41D45E90A000C75C5 /* YNPageScrollView.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E95025D1D6D426D00106EC3 /* YNPageScrollHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollHeaderView.h; sourceTree = "<group>"; };
+		2E95025E1D6D426D00106EC3 /* YNPageScrollHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollHeaderView.m; sourceTree = "<group>"; };
 		2EA091EF1D45E90A000C75C5 /* UIView+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YNCategory.h"; sourceTree = "<group>"; };
 		2EA091F01D45E90A000C75C5 /* UIView+YNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YNCategory.m"; sourceTree = "<group>"; };
 		2EA091F11D45E90A000C75C5 /* UIViewController+YNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YNCategory.h"; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				2EA091F81D45E90A000C75C5 /* YNPageScrollViewMenu.m */,
 				2EA091F91D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.h */,
 				2EA091FA1D45E90A000C75C5 /* YNPageScrollViewMenuConfigration.m */,
+				2E95025D1D6D426D00106EC3 /* YNPageScrollHeaderView.h */,
+				2E95025E1D6D426D00106EC3 /* YNPageScrollHeaderView.m */,
 			);
 			path = YNPageScrollViewController;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				2EA092191D45E914000C75C5 /* YNTestTwoViewController.m in Sources */,
 				2EA092161D45E914000C75C5 /* YNTestFourViewController.m in Sources */,
 				2EA092171D45E914000C75C5 /* YNTestOneViewController.m in Sources */,
+				2E95025F1D6D426D00106EC3 /* YNPageScrollHeaderView.m in Sources */,
 				2EA092241D45E925000C75C5 /* AppDelegate.m in Sources */,
 				2EA091FE1D45E90A000C75C5 /* YNPageScrollViewController.m in Sources */,
 				2EA0921D1D45E914000C75C5 /* YNTopStyleViewController.m in Sources */,

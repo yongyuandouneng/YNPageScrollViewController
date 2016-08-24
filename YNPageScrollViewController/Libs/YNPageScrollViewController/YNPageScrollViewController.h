@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YNPageScrollViewMenu.h"
 #import "UIViewController+YNCategory.h"
+#import "YNPageScrollView.h"
 
 @class YNPageScrollViewController,YNPageScrollViewController;
 
@@ -50,7 +51,7 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 /** 菜单Menu*/
 @property (nonatomic, strong) YNPageScrollViewMenu *scrollViewMenu;
 /** 父容器UIScrollView*/
-@property (nonatomic, strong) UIScrollView *parentScrollView;
+@property (nonatomic, strong) YNPageScrollView *parentScrollView;
 /** 配置信息*/
 @property (nonatomic, strong) YNPageScrollViewMenuConfigration *configration;
 /** 添加按钮*/

@@ -10,9 +10,9 @@
 #define kYNPageTabbarHeight 49
 #import "YNPageScrollViewController.h"
 #import "UIView+YNCategory.h"
-#import "YNPageScrollView.h"
+#import "YNPageScrollHeaderView.h"
 
-@interface YNPageScrollViewController ()<UIScrollViewDelegate, YNPageScrollViewMenuDelegate, UITableViewDelegate,YNPageScrollViewControllerDelegate>
+@interface YNPageScrollViewController ()<UIScrollViewDelegate, YNPageScrollViewMenuDelegate, UITableViewDelegate,YNPageScrollViewControllerDelegate,YNPageScrollHeaderViewDelegate>
 {
     BOOL _isAsChildViewController ;
     
@@ -37,7 +37,7 @@
 /** 临时headerView*/
 @property (nonatomic, strong) UIView *tempHeaderView;
 /** headerView*/
-@property (nonatomic, strong) UIView *bigHeaderView;
+@property (nonatomic, strong) YNPageScrollHeaderView *bigHeaderView;
 
 @property (nonatomic, assign) BOOL DidLayoutSubviews;
 
@@ -311,7 +311,6 @@
 }
 
 
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     if (self.lockDidScrollView) return;
@@ -460,6 +459,13 @@
     }
 }
 
+
+#pragma mark - YNPageScrollHeaderViewDelegate
+
+- (void)YNPageScrollHeaderViewHitTest:(BOOL)showGestureBegin{
+    
+    self.parentScrollView.gestureRecognizerShouldBegin = showGestureBegin;
+}
 
 #pragma mark - Public Mehtod
 
@@ -716,7 +722,8 @@
 - (UIView *)bigHeaderView{
     
     if (!_bigHeaderView) {
-        _bigHeaderView = [[UIView alloc]init];
+        _bigHeaderView = [[YNPageScrollHeaderView alloc]init];
+        _bigHeaderView.delegate = self;
     }
     return _bigHeaderView;
     

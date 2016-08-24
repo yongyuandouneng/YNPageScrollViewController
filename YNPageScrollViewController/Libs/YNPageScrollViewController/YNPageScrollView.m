@@ -10,6 +10,15 @@
 
 @implementation YNPageScrollView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.gestureRecognizerShouldBegin = YES;
+    }
+    return self;
+}
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     // iOS横向滚动的scrollView和系统pop手势返回冲突的解决办法:     http://blog.csdn.net/hjaycee/article/details/49279951
     
@@ -32,8 +41,9 @@
 
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    CGFloat X = [gestureRecognizer locationInView:gestureRecognizer.view].y;
-    return X > self.headerViewHeight;
+    
+    
+    return self.gestureRecognizerShouldBegin;
 }
 
 @end

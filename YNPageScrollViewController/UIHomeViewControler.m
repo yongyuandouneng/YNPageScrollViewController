@@ -31,10 +31,10 @@
     [super viewDidLoad];
     
     //        [self.navigationController.navigationBar setTranslucent:NO];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.view.backgroundColor = [UIColor redColor];
     
     [self.loadingView startAnimating];
     
@@ -46,6 +46,7 @@
         
         
     });
+    
     
 }
 
@@ -81,7 +82,7 @@
     configration.scrollMenu = YES;
     configration.showGradientColor = NO;//取消渐变
     configration.showNavigation = YES;
-    configration.showTabbar = YES;//设置显示tabbar
+    configration.showTabbar = NO;//设置显示tabbar
     
     //创建控制器
     YNJianShuDemoViewController *vc = [YNJianShuDemoViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"第一个界面",@"第二个界面",@"第三个界面",@"第四个界面"] Configration:configration];
@@ -170,7 +171,32 @@
     
     return _loadingView;
 }
+-(UIImage*) createImageWithColor:(UIColor*) color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
 
+
+- (void)createTabbarItems
+{
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 49 + 5)];
+    [imageView setImage:[self createImageWithColor:[UIColor clearColor]]];
+    [imageView setContentMode:UIViewContentModeScaleToFill];
+    [self.tabBarController.tabBar insertSubview:imageView atIndex:0];
+    //覆盖原生Tabbar的上横线
+    [[UITabBar appearance] setShadowImage:[self createImageWithColor:[UIColor clearColor]]];
+    // 背景图片为透明色
+    [[UITabBar appearance] setBackgroundImage:[self createImageWithColor:[UIColor clearColor]]];
+    self.tabBarController.tabBar.translucent = YES;
+}
 
 
 @end
