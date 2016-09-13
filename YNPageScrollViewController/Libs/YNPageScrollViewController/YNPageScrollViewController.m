@@ -100,6 +100,8 @@
             //初始化菜单
             [self initPageScrollViewMenuWithFrame:CGRectMake(0,self.headerView.yn_height,self.view.yn_width,self.configration.menuHeight)];
             
+            self.originHeaderOffSetY = self.scrollViewMenu.yn_y;
+            
             UITableView *tableView = (UITableView *)[self getScrollViewForDataSource];
             tableView.tableHeaderView = self.bigHeaderView;
             tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.bigHeaderView.yn_height, 0, 0, 0);
@@ -107,7 +109,7 @@
             ((YNPageScrollView *)self.parentScrollView).headerViewHeight = self.bigHeaderView.yn_height;
             
             
-            self.originHeaderOffSetY = self.scrollViewMenu.yn_y;
+            
             
         }else if ([self isTopStyle]){
             
@@ -193,8 +195,9 @@
     UIViewController * cacheViewController = [self.cacheDictionaryM objectForKey:title];
     if (cacheViewController) {
         [self addViewControllerToParentScrollView:cacheViewController index:index];
+    }else{
+        [self addViewControllerToParentScrollView:self.viewControllers[index] index:index];
     }
-    [self addViewControllerToParentScrollView:self.viewControllers[index] index:index];
     
 }
 
@@ -225,8 +228,9 @@
         UITableView *tableView = (UITableView *)scrollView;
         if (tableView.tableHeaderView == nil) {
             tableView.tableHeaderView = self.bigHeaderView;
-            tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.bigHeaderView.yn_height, 0, 0, 0);
         }
+        
+        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.bigHeaderView.yn_height, 0, 0, 0);
     }
     
     if (![self.cacheDictionaryM objectForKey:title]) {//缓存
@@ -452,6 +456,7 @@
         }else{
             
             [self getScrollViewForDataSource].contentOffset = CGPointMake(0,self.originHeaderOffSetY - deltaHeight);
+            self.contentoffSetY = self.originHeaderOffSetY - deltaHeight;
         }
     }else{
         
@@ -601,8 +606,11 @@
         self.scrollViewMenu = nil;
         [self.contentOffsetDictionaryM removeAllObjects];
         [self configUI];
-
-        [[self getScrollViewForDataSource] setContentOffset:CGPointMake(0, 0)];
+            
+        for (UITableView *tableView in self.scrollViewCacheDictionryM.allValues) {
+            [tableView setContentOffset:CGPointMake(0, 0)];
+            tableView.tableHeaderView = self.bigHeaderView;
+        }
     }
 
 }

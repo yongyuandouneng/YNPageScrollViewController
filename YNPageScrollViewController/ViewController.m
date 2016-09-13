@@ -206,8 +206,8 @@
     
     vc.dataSource = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 250);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
         [vc reloadHeaderViewFrame];
     });
     

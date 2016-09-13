@@ -40,7 +40,7 @@
     [self.view addSubview:self.tableView];
     self.isFirst = YES;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         for (int i = 0; i < 20; i++) {
             [self.datasArrayM addObject:[NSString stringWithFormat:@" 原始数据 %zd",i]];
         }

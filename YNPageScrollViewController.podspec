@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNPageScrollViewController'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = '一个强大的PageScrollViewController滑动库.'
 
 # This description is used to generate tags and improve search results.
