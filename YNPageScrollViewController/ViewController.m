@@ -260,9 +260,8 @@
     configration.selectedItemColor = [UIColor blackColor];
     configration.showConver = YES;
     configration.converColor = [UIColor blueColor];
-    configration.scrollMenu = NO;
-    configration.aligmentModeCenter = NO;
-    YNTopStyleViewController *vc = [YNTopStyleViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门"] Configration:configration];
+    
+    YNTopStyleViewController *vc = [YNTopStyleViewController pageScrollViewControllerWithControllers:[self getViewController] titles:@[@"最新收录",@"最新评论",@"热门",@"更多",@"新闻",@"搞笑视频",@"热门视频",@"有趣小事"] Configration:configration];
     vc.dataSource = self;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -326,7 +325,7 @@
     YNTestThreeViewController *three1 = [[YNTestThreeViewController alloc]init];
     
     YNTestFourViewController *four1 = [[YNTestFourViewController alloc]init];
-    return @[one,two,three];
+    return @[one,two,three,four,one1,two1,three1,four1];
 }
 
 
