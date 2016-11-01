@@ -250,7 +250,7 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "-initPageScrollViewMenuWithFrame:titles:Configration:delegate:currentIndex:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -388,29 +388,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewMenu.m"
-            timestampString = "492599619.041828"
+            timestampString = "499661303.359156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-configUI"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YNPageScrollViewController/Libs/YNPageScrollViewController/YNPageScrollViewMenu.m"
-            timestampString = "492599679.167369"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "-configUI"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

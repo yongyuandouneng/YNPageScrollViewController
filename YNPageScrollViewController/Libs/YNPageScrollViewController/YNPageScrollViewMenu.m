@@ -167,6 +167,12 @@
     CGFloat lineW = [[self.itemsArrayM firstObject] yn_width];
     CGFloat lineH = self.configration.lineHeight;
     
+    if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理Line宽度等于字体宽度
+        lineX = [(UILabel *)[self.itemsArrayM firstObject] yn_x] + ([[self.itemsArrayM firstObject] yn_width]  - ([self.itemsWidthArraM.firstObject floatValue])) / 2;
+        lineW = [self.itemsWidthArraM.firstObject floatValue];
+    }
+    
+    
     //conver
     if (self.configration.showConver) {
         
@@ -205,11 +211,25 @@
     if (self.configration.showScrollLine) {
         self.lineView.yn_x = currentLabel.yn_x - self.configration.lineLeftAndRightAddWidth;
         self.lineView.yn_width = currentLabel.yn_width + self.configration.lineLeftAndRightAddWidth *2;
+        
+        if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理Line宽度等于字体宽度
+            
+            self.lineView.yn_x = currentLabel.yn_x + ([currentLabel yn_width]  - ([self.itemsWidthArraM[currentLabel.tag] floatValue])) / 2 - self.configration.lineLeftAndRightAddWidth;;
+            self.lineView.yn_width = [self.itemsWidthArraM[currentLabel.tag] floatValue] + self.configration.lineLeftAndRightAddWidth *2;
+        }
+        
     }
     //遮盖
     if (self.configration.showConver) {
         self.converView.yn_x = currentLabel.yn_x - converMarginX;
         self.converView.yn_width = currentLabel.yn_width +converMarginW;
+        
+        if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理conver宽度等于字体宽度
+            
+            self.converView.yn_x = currentLabel.yn_x + ([currentLabel yn_width]  - ([self.itemsWidthArraM[currentLabel.tag] floatValue])) / 2 - converMarginX;
+            self.converView.yn_width = [self.itemsWidthArraM[currentLabel.tag] floatValue] + converMarginW;
+        }
+        
     }
     
     self.lastIndex = self.currentIndex;
@@ -266,11 +286,24 @@
         if (self.configration.showScrollLine) {
             self.lineView.yn_x = currentLabel.yn_x - self.configration.lineLeftAndRightAddWidth;
             self.lineView.yn_width = currentLabel.yn_width + self.configration.lineLeftAndRightAddWidth *2;
+            
+            if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理Line宽度等于字体宽度
+                
+                self.lineView.yn_x = currentLabel.yn_x + ([currentLabel yn_width]  - ([self.itemsWidthArraM[currentLabel.tag] floatValue])) / 2 - self.configration.lineLeftAndRightAddWidth;;
+                self.lineView.yn_width = [self.itemsWidthArraM[currentLabel.tag] floatValue] + self.configration.lineLeftAndRightAddWidth *2;
+            }
+            
         }
         //遮盖
         if (self.configration.showConver) {
             self.converView.yn_x = currentLabel.yn_x - converMarginX;
             self.converView.yn_width = currentLabel.yn_width +converMarginW;
+            
+            if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理conver宽度等于字体宽度
+                
+                self.converView.yn_x = currentLabel.yn_x + ([currentLabel yn_width]  - ([self.itemsWidthArraM[currentLabel.tag] floatValue])) / 2  - converMarginX;
+                self.converView.yn_width = [self.itemsWidthArraM[currentLabel.tag] floatValue] +converMarginW;
+            }
         }
         
         self.lastIndex = self.currentIndex;
@@ -327,11 +360,23 @@
     if (self.configration.showScrollLine) {
         self.lineView.yn_x = lastLabel.yn_x + xD *progress - self.configration.lineLeftAndRightAddWidth;
         self.lineView.yn_width = lastLabel.yn_width + wD *progress + self.configration.lineLeftAndRightAddWidth *2;
+        
+        if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理Line宽度等于字体宽度
+            self.lineView.yn_x = lastLabel.yn_x + ([lastLabel yn_width]  - ([self.itemsWidthArraM[lastLabel.tag] floatValue])) / 2 - self.configration.lineLeftAndRightAddWidth + xD *progress;
+            self.lineView.yn_width = [self.itemsWidthArraM[lastLabel.tag] floatValue] + self.configration.lineLeftAndRightAddWidth *2 + wD *progress;
+        }
+        
     }
     //遮盖
     if (self.configration.showConver) {
         self.converView.yn_x = lastLabel.yn_x + xD *progress - converMarginX;
         self.converView.yn_width = lastLabel.yn_width  + wD *progress + converMarginW;
+        
+        if (!self.configration.scrollMenu&&!self.configration.aligmentModeCenter&&self.configration.lineWidthEqualFontWidth) {//处理cover宽度等于字体宽度
+            self.converView.yn_x = lastLabel.yn_x + ([lastLabel yn_width]  - ([self.itemsWidthArraM[lastLabel.tag] floatValue])) / 2 -  converMarginX + xD *progress;
+            self.converView.yn_width = [self.itemsWidthArraM[lastLabel.tag] floatValue] + converMarginW + wD *progress;
+        }
+        
     }
 }
 

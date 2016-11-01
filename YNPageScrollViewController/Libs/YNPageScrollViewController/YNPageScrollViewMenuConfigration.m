@@ -41,6 +41,7 @@
         _scrollMenu = YES;
         _bounces = YES;
         _aligmentModeCenter = YES;
+        _lineWidthEqualFontWidth = NO;
         
         _lineColor = [UIColor redColor];
         _converColor = [UIColor groupTableViewBackgroundColor];

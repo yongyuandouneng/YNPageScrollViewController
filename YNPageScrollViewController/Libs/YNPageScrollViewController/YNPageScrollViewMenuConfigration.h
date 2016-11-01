@@ -41,6 +41,9 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
  *  scrollMenu = NO,aligmentModeCenter = NO 会变成平分
  */
 @property (nonatomic, assign) BOOL aligmentModeCenter;
+/** 当aligmentModeCenter 变为平分时 是否需要线条宽度等于字体宽度 默认 NO*/
+@property (nonatomic, assign) BOOL lineWidthEqualFontWidth;
+
 /** 按钮N图片*/
 @property (nonatomic, copy) NSString *addButtonNormalImageName;
 /** 按钮H图片*/
