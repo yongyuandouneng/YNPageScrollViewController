@@ -11,10 +11,14 @@
 #import "UIViewController+YNCategory.h"
 #import "YNPageScrollView.h"
 
+typedef NS_ENUM(NSInteger , YNHeaderViewScaleMode){
+    YNHeaderViewScaleModeTop = 0,
+    YNHeaderViewScaleModeCenter = 1
+};
+
 @class YNPageScrollViewController,YNPageScrollViewController;
 
 typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pageScrollViewController);
-
 //数据源
 @protocol YNPageScrollViewControllerDataSource <NSObject>
 
@@ -26,12 +30,26 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 - (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewHeaderAndFooterEndRefreshForIndex:(NSInteger)index;
 
 
+
+
+
 @end
 //代理
 @protocol YNPageScrollViewControllerDelegate <NSObject>
 @optional
 /** 监听进度*/
 - (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController tableViewScrollViewContentOffset:(CGFloat)contentOffset progress:(CGFloat)progress;
+
+//==================================头部伸缩代理======================================
+@optional
+/** 伸缩开始结束监听*/
+- (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController
+      scrollViewHeaderScaleState:(BOOL)isStart;
+@optional
+/** 伸缩位置contentOffset*/
+- (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController
+scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
+
 
 @end
 
@@ -48,6 +66,13 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 @property (nonatomic, strong) UIView *headerView;
 /** 悬浮样式 作为UITableFooterView*/
 @property (nonatomic, strong) UIView *placeHoderView;
+
+/** 头部是否能伸缩效果   要伸缩效果就不能有下拉刷新控件 NO*/
+@property (nonatomic, assign) BOOL HeaderViewCouldScale;
+/** 头部伸缩背景View*/
+@property (nonatomic, strong) UIView *scaleBackgroundView;
+/** 默认顶部*/
+@property (nonatomic, assign) YNHeaderViewScaleMode headerViewScaleMode;
 /** 菜单Menu*/
 @property (nonatomic, strong) YNPageScrollViewMenu *scrollViewMenu;
 /** 父容器UIScrollView*/
@@ -84,12 +109,13 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 - (void)setPageScrollViewMenuSelectPageIndex:(NSInteger)index animated:(BOOL)animated;
 
 /**
- *  为YNPageScrollViewControoler添加一个title 控制器
+ *  为YNPageScrollViewControoler添加title 控制器
  *
- *  @param title          菜单title
- *  @param viewController 目标控制器
+ *  @param titles          菜单title
+ *  @param viewControllers 目标控制器
+ *  @param index           插入到的index
  */
-- (void)addPageScrollViewControllerWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
+- (void)addPageScrollViewControllerWithTitle:(NSArray *)titles viewController:(NSArray *)viewControllers inserIndex:(NSInteger)index;
 
 /**
  *  为YNPageScrollViewControoler移除一个title 控制器
@@ -99,6 +125,26 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 - (void)removePageScrollControllerWithTtitle:(NSString *)title;
 
 - (void)removePageScrollControllerWithIndex:(NSInteger)index;
+
+
+/**
+ *  整个标题替换,相应的控制器也会作出调整。可用作排序功能。
+ *
+ *  @param titleArray 标题数组
+ */
+- (void)replaceTitleArray:(NSMutableArray *)titleArray;
+
+/**
+ *  重新加载YNPageScrollViewController，缓存控制器仍然在。
+ *  @param index  定位到第几index，默认会加载第0页。如果为nil，原来有的话 就是加载原来的否则会定位为0.
+ */
+- (void)reloadYNPageScrollViewControllerLoadPage:(NSNumber *)index;
+
+/**
+ *  重新加载YNPageScrollViewController，清空缓存控制器。
+ */
+- (void)reloadYNPageScrollViewControllerRemoveCacheLoadPage:(NSNumber *)index;
+
 
 
 /**
