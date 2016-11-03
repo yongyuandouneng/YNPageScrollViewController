@@ -485,7 +485,6 @@
     [self updateSubViewScrollViewContentInset];
 }
 
-
 - (void)replaceTempHeaderView{
     
     if (!self.isHeaderViewInTempHeaderView && [self isSuspensionStyle]) {
@@ -499,16 +498,16 @@
         
         if ([self getTableViewIsRefresing]) {
             [self getTableViewEndRefresh];
-        }
-        CGFloat deltaHeight = 0;
-        if (self.tempHeaderView.yn_y > deltaHeight) {
-            [UIView animateWithDuration:self.configration.tableViewResfreshAnimationTime animations:^{
-                self.tempHeaderView.yn_y = deltaHeight;
-            }];
+            CGFloat deltaHeight = 0;
+            if (self.tempHeaderView.yn_y > deltaHeight) {
+                [UIView animateWithDuration:self.configration.tableViewResfreshAnimationTime animations:^{
+                    self.tempHeaderView.yn_y = deltaHeight;
+                    [self getScrollViewForDataSource].contentOffset = CGPointMake(0, 0);
+                }];
+            }
         }
     }
 }
-
 
 - (void)replaceTableViewHeaderView{
     
