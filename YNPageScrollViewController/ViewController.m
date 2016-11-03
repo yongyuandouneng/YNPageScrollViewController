@@ -192,6 +192,8 @@
     // 头部是否能伸缩效果   要伸缩效果就不要有下拉刷新控件 默认NO*/
     vc.HeaderViewCouldScale = YES;
     
+   
+    
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 245)];
     imageView.image = [UIImage imageNamed:@"mine_header_bg"];
     imageView.userInteractionEnabled = YES;

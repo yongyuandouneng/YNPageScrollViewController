@@ -653,11 +653,16 @@
     self.DidLayoutSubviews = NO;
     [self configUI];
     
+    /// 防止拖动过程中 刷新
+    self.isHeaderViewInTempHeaderView = NO;
+    
+    
     NSInteger currentPage = index == nil ? self.pageIndex : [index integerValue];
     //TODO 暂时
     [self setPageScrollViewMenuSelectPageIndex:0 animated:NO];
     
     [self setPageScrollViewMenuSelectPageIndex:currentPage animated:NO];
+    
     
 }
 
@@ -752,6 +757,10 @@
             [tableView setContentOffset:CGPointMake(0, 0)];
             tableView.tableHeaderView = self.bigHeaderView;
         }
+        
+        /// 防止拖动过程中 刷新
+        self.isHeaderViewInTempHeaderView = NO;
+        
     }
     
 }
