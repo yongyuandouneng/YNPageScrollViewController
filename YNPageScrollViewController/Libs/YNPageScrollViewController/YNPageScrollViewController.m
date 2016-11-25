@@ -306,8 +306,6 @@
                 
                 if (self.headerViewScaleMode == YNHeaderViewScaleModeTop) {
                     
-                    //                    CGFloat factor = ((ABS(yOffset)+self.headerView.yn_height)*self.view.yn_width)/self.headerView.yn_height;
-                    //                    f = CGRectMake(-(factor-self.view.yn_width)/2, 0, factor, self.headerView.yn_height+ABS(yOffset));
                     
                     f.origin.y = 0;
                     f.size.height =  -yOffset + self.headerView.yn_height;

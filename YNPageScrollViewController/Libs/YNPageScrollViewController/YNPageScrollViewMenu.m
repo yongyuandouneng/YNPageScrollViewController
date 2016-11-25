@@ -129,19 +129,18 @@
         left = (self.scrollView.yn_width - left - self.configration.itemMargin * (self.itemsWidthArraM.count-1)) * 0.5;
         if (self.configration.aligmentModeCenter && left >= 0) {//居中且有剩余间距
             
-            self.configration.itemLeftAndRightMargin = left;
             
             [self.itemsArrayM enumerateObjectsUsingBlock:^(UILabel  * label, NSUInteger idx, BOOL * _Nonnull stop) {
                 
                 if (idx == 0) {
-                    itemX += self.configration.itemLeftAndRightMargin;
+                    itemX += left;
                 }else{
                     itemX += self.configration.itemMargin + [self.itemsWidthArraM[idx - 1] floatValue];
                 }
                 label.frame = CGRectMake(itemX, itemY, [self.itemsWidthArraM[idx] floatValue], itemH);
             }];
             
-            self.scrollView.contentSize = CGSizeMake(self.configration.itemLeftAndRightMargin + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
+            self.scrollView.contentSize = CGSizeMake(left + CGRectGetMaxX([[self.itemsArrayM lastObject] frame]), self.scrollView.yn_height);
             
         }else{//否则按原来样子
             if (!self.configration.scrollMenu) {//不能滚动则平分
