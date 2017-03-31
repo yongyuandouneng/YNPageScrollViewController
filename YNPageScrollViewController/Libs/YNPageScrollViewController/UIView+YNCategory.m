@@ -18,6 +18,8 @@
     self.frame = frame;
     
 }
+
+
 //getter
 - (CGFloat)yn_x
 {
