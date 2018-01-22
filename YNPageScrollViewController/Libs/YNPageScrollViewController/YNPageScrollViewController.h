@@ -50,6 +50,10 @@ typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pag
 - (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController
 scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
 
+/// 自定义 menu
+- (void)pageScrollViewDidEndDecelerating:(UIScrollView *)scrollView;
+- (void)pageScrollViewDidScroll:(UIScrollView *)scrollView;
+
 
 @end
 

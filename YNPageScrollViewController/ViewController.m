@@ -297,38 +297,7 @@
         NSLog(@"%@",btn);
         
     };
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        [vc removePageScrollControllerWithIndex:vc.viewControllers.count - 1];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [vc addPageScrollViewControllerWithTitle:@[@"测试"] viewController:@[[[YNTestOneViewController alloc] init]] inserIndex:vc.viewControllers.count - 1];
-            [vc reloadYNPageScrollViewControllerLoadPage:nil];
-        });
-        
-//        YNTestOneViewController *one = [[YNTestOneViewController alloc]init];
-//        
-//        YNTestTwoViewController *two = [[YNTestTwoViewController alloc]init];
-//        
-//        YNTestOneViewController *one1 = [[YNTestOneViewController alloc]init];
-//        
-//        YNTestTwoViewController *two1 = [[YNTestTwoViewController alloc]init];
-//        
-//        YNTestOneViewController *one2 = [[YNTestOneViewController alloc]init];
-//        
-//        YNTestTwoViewController *two2 = [[YNTestTwoViewController alloc]init];
-//        [vc replaceTitleArray:@[@"测试",@"热门",@"最新收录",@"最新评论",@"更多",@"新闻",@"搞笑视频",@"热门视频",@"有趣小事"].mutableCopy];
-//        [vc addPageScrollViewControllerWithTitle:@[@"我啊",@"测试咯阿萨德",@"我啊1",@"测试咯阿萨德1",@"我啊2",@"测试咯阿萨德2"] viewController:@[one,two,one1,two1,one2,two2] inserIndex:0];
-        [vc reloadYNPageScrollViewControllerLoadPage:nil];
-        
-    });
-    
+   
     return vc;
     
 }

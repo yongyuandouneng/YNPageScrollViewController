@@ -28,6 +28,8 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, assign) BOOL showConver;
 /** 是否显示线条 YES */
 @property (nonatomic, assign) BOOL showScrollLine;
+/** 是否显示底部线条 NO*/
+@property (nonatomic, assign) BOOL showBottomLine;
 /** 颜色是否渐变 YES */
 @property (nonatomic, assign) BOOL showGradientColor;
 /** 是否显示按钮 NO */
@@ -60,12 +62,16 @@ typedef NS_ENUM(NSInteger , YNPageScrollViewMenuStyle) {
 @property (nonatomic, strong) UIColor *normalItemColor;
 /** 选项选中color*/
 @property (nonatomic, strong) UIColor *selectedItemColor;
+/** 底部线条颜色*/
+@property (nonatomic, strong) UIColor *bottomLineBgColor;
 /** 线height 2 */
 @property (nonatomic, assign) CGFloat lineHeight;
 /** 线条底部距离 0*/
 @property (nonatomic, assign) CGFloat lineBottomMargin;
 /** 线条左右增加 0  默认线条宽度是等于 item宽度*/
 @property (nonatomic, assign) CGFloat lineLeftAndRightAddWidth;
+/** 底部线height 2 */
+@property (nonatomic, assign) CGFloat bottomLineHeight;
 /** 遮盖height 28 */
 @property (nonatomic, assign) CGFloat converHeight;
 /** 菜单height */

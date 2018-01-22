@@ -36,6 +36,7 @@
         _pageScrollViewMenuStyle = YNPageScrollViewMenuStyleTop;
         _showConver = NO;
         _showScrollLine = YES;
+        _showBottomLine = NO;
         _showGradientColor =YES;
         _showAddButton = NO;
         _scrollMenu = YES;
@@ -46,6 +47,7 @@
         _lineColor = [UIColor redColor];
         _converColor = [UIColor groupTableViewBackgroundColor];
         _addButtonBackgroundColor = [UIColor whiteColor];
+        _bottomLineBgColor = [UIColor greenColor];
         _scrollViewBackgroundColor = [UIColor whiteColor];
         _normalItemColor = [UIColor grayColor];
         _selectedItemColor = [UIColor greenColor];
@@ -61,6 +63,7 @@
         _lineBottomMargin = 0;
         _lineLeftAndRightAddWidth = 0;
         _tableViewResfreshAnimationTime = 0.4;
+        _bottomLineHeight = 2;
     }
     return self;
 }

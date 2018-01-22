@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
+    UITableView.appearance.estimatedRowHeight = 0;
+    UITableView.appearance.estimatedSectionHeaderHeight = 0;
+    UITableView.appearance.estimatedSectionFooterHeight = 0;
+    
     return YES;
 }
 

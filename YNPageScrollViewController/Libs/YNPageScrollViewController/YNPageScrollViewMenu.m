@@ -30,6 +30,8 @@
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
+@property (nonatomic, strong) UIView *bottomLine;
+
 @end
 
 
@@ -179,10 +181,20 @@
         [self.scrollView insertSubview:self.converView atIndex:0];
     }
     
+    if (self.configration.showBottomLine) {
+        self.bottomLine = [[UIView alloc] init];
+        self.bottomLine.backgroundColor = self.configration.bottomLineBgColor;
+        self.bottomLine.frame = CGRectMake(0, self.scrollView.yn_height - self.configration.bottomLineHeight, self.scrollView.yn_width, self.configration.bottomLineHeight);
+        [self.scrollView addSubview:self.bottomLine];
+    }
+    
+    
     if (self.configration.showScrollLine) {
         self.lineView.frame = CGRectMake(lineX - self.configration.lineLeftAndRightAddWidth, lineY - self.configration.lineBottomMargin, lineW + self.configration.lineLeftAndRightAddWidth * 2, lineH);
         [self.scrollView addSubview:self.lineView];
     }
+    
+    
     
     if (self.configration.itemMaxScale > 1) {
         ((UILabel *)self.itemsArrayM[0]).transform = CGAffineTransformMakeScale(self.configration.itemMaxScale, self.configration.itemMaxScale);
@@ -485,3 +497,4 @@
 }
 
 @end
+

@@ -80,6 +80,10 @@
         
     }
     
+    if (@available(iOS 11.0, *)) {
+        self.parentScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
 }
 
 - (void)configUI{
@@ -417,7 +421,9 @@
         [self removeViewController];
         [self.scrollViewMenu adjustItemPositionWithCurrentIndex:self.pageIndex];
     }
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageScrollViewDidEndDecelerating:)]) {
+        [self.delegate pageScrollViewDidEndDecelerating:scrollView];
+    }
 }
 
 
@@ -443,6 +449,9 @@
     
     [self updateSubViewScrollViewContentInset];
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageScrollViewDidScroll:)]) {
+        [self.delegate pageScrollViewDidScroll:scrollView];
+    }
     
 }
 

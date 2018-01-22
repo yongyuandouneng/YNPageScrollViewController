@@ -8,6 +8,12 @@
 
 #import "YNPageScrollView.h"
 
+
+#define IPHONE_H [UIScreen mainScreen].bounds.size.height //屏幕的高度
+
+#define IPHONE_W [UIScreen mainScreen].bounds.size.width // 屏幕的宽度
+
+
 @implementation YNPageScrollView
 
 - (instancetype)init
@@ -20,30 +26,42 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    // iOS横向滚动的scrollView和系统pop手势返回冲突的解决办法:     http://blog.csdn.net/hjaycee/article/details/49279951
     
-    if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UILayoutContainerView")]) {
-        if (otherGestureRecognizer.state == UIGestureRecognizerStateBegan && self.contentOffset.x == 0) {
-            return YES;
-        }
-    }
-    
-    return NO;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    //MARK: UITableViewCell 自定义手势可能要在此处自行定义
-    if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UITableViewWrapperView")] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+    if ([self panBack:gestureRecognizer]) {
         return YES;
     }
     return NO;
+    
 }
 
+- (BOOL)panBack:(UIGestureRecognizer *)gestureRecognizer {
+    
+    //是滑动返回距左边的有效长度
+    int location_X = 0.15 * IPHONE_W;
+    
+    if (gestureRecognizer ==self.panGestureRecognizer) {
+        UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint point = [pan translationInView:self];
+        UIGestureRecognizerState state = gestureRecognizer.state;
+        if (UIGestureRecognizerStateBegan == state ||UIGestureRecognizerStatePossible == state) {
+            CGPoint location = [gestureRecognizer locationInView:self];
+            
+            if (point.x > 0 && location.x < location_X && self.contentOffset.x <= 0) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+    
+}
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     
-    
+    if ([self panBack:gestureRecognizer]) {
+        return NO;
+    }
     return self.gestureRecognizerShouldBegin;
+    
 }
 
 @end
