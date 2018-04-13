@@ -54,7 +54,7 @@
 - (UIView *)navView{
     
     if (!_navView) {
-        _navView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+        _navView =  [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kYNPageNavHeight)];
         _navView.backgroundColor = [UIColor purpleColor];
         _navView.alpha = 0;
     }

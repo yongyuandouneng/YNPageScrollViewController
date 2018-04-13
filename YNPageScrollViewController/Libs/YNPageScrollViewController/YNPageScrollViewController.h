@@ -10,6 +10,7 @@
 #import "YNPageScrollViewMenu.h"
 #import "UIViewController+YNCategory.h"
 #import "YNPageScrollView.h"
+#import "UIView+YNCategory.h"
 
 typedef NS_ENUM(NSInteger , YNHeaderViewScaleMode){
     YNHeaderViewScaleModeTop = 0,
@@ -19,26 +20,25 @@ typedef NS_ENUM(NSInteger , YNHeaderViewScaleMode){
 @class YNPageScrollViewController,YNPageScrollViewController;
 
 typedef void(^AddButtonAtion) (UIButton *button ,YNPageScrollViewController *pageScrollViewController);
-//数据源
+/// 数据源
 @protocol YNPageScrollViewControllerDataSource <NSObject>
 
-//设置UIScrollView
+/// 设置UIScrollView
 - (UIScrollView *)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewForIndex:(NSInteger )index;
 
 - (BOOL)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController headerViewIsRefreshingForIndex:(NSInteger)index;
 
 - (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController scrollViewHeaderAndFooterEndRefreshForIndex:(NSInteger)index;
 
-
-
-
-
 @end
-//代理
+
+/// 代理
 @protocol YNPageScrollViewControllerDelegate <NSObject>
 @optional
 /** 监听进度*/
-- (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController tableViewScrollViewContentOffset:(CGFloat)contentOffset progress:(CGFloat)progress;
+- (void)pageScrollViewController:(YNPageScrollViewController *)pageScrollViewController 
+tableViewScrollViewContentOffset:(CGFloat)contentOffset
+                        progress:(CGFloat)progress;
 
 //==================================头部伸缩代理======================================
 @optional
@@ -53,7 +53,6 @@ scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
 /// 自定义 menu
 - (void)pageScrollViewDidEndDecelerating:(UIScrollView *)scrollView;
 - (void)pageScrollViewDidScroll:(UIScrollView *)scrollView;
-
 
 @end
 
@@ -102,7 +101,9 @@ scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
  *  @param configration    配置信息
  *
  */
-+ (instancetype)pageScrollViewControllerWithControllers:(NSArray *)viewControllers titles:(NSArray *)titleArrayM Configration:(YNPageScrollViewMenuConfigration *)configration;
++ (instancetype)pageScrollViewControllerWithControllers:(NSArray *)viewControllers
+                                                 titles:(NSArray *)titleArrayM
+                                           Configration:(YNPageScrollViewMenuConfigration *)configration;
 
 /**
  *  选中第几页
@@ -110,7 +111,8 @@ scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
  *  @param index    第几页 从0开始
  *  @param animated 是否动画
  */
-- (void)setPageScrollViewMenuSelectPageIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)setPageScrollViewMenuSelectPageIndex:(NSInteger)index
+                                    animated:(BOOL)animated;
 
 /**
  *  为YNPageScrollViewControoler添加title 控制器
@@ -119,7 +121,9 @@ scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
  *  @param viewControllers 目标控制器
  *  @param index           插入到的index
  */
-- (void)addPageScrollViewControllerWithTitle:(NSArray *)titles viewController:(NSArray *)viewControllers inserIndex:(NSInteger)index;
+- (void)addPageScrollViewControllerWithTitle:(NSArray *)titles
+                              viewController:(NSArray *)viewControllers
+                                  inserIndex:(NSInteger)index;
 
 /**
  *  为YNPageScrollViewControoler移除一个title 控制器
@@ -149,15 +153,14 @@ scrollViewHeaderScaleContentOffset:(CGFloat)contentOffset;
  */
 - (void)reloadYNPageScrollViewControllerRemoveCacheLoadPage:(NSNumber *)index;
 
-
-
 /**
  *  当前PageScrollViewVC作为子控制器
  *
  *  @param parentViewControler 父类控制器
  *  @param isAfterLoadData     是否是在加载数据之后
  */
-- (void)addSelfToParentViewController:(UIViewController *)parentViewControler isAfterLoadData:(BOOL)isAfterLoadData;
+- (void)addSelfToParentViewController:(UIViewController *)parentViewControler
+                      isAfterLoadData:(BOOL)isAfterLoadData;
 
 /**
  *  从父类控制器里面移除自己（PageScrollViewVC）

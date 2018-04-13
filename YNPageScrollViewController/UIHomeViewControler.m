@@ -44,11 +44,7 @@
         YNJianShuDemoViewController *viewController = [self getJianShuDemoViewController];
         [viewController addSelfToParentViewController:self isAfterLoadData:YES];
         
-        
-        
-        
     });
-    
     
 }
 

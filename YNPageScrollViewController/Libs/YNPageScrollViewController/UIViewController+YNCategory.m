@@ -11,15 +11,12 @@
 
 @implementation UIViewController (YNCategory)
 
-
-- (YNPageScrollViewController *)ynPageScrollViewController{
+- (YNPageScrollViewController *)ynPageScrollViewController {
     
     if (self.parentViewController && [self.parentViewController isKindOfClass:[YNPageScrollViewController class]]) {
         return (YNPageScrollViewController *)self.parentViewController;
     }
     return nil;
-
 }
-
 
 @end

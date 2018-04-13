@@ -13,9 +13,10 @@
 #import "YNPageScrollViewController.h"
 #import "YNTestOneViewController.h"
 #import "YNTestTwoViewController.h"
-//是否带刷新
-#define HasHeaderRefresh 1
-//是否有loading和无数据view
+// 是否带刷新
+#define HasHeaderRefresh 0
+
+// 是否有loading和无数据view
 #define HasLoadingAndNotDataView 0
 
 @interface YNTestBaseViewController ()
@@ -37,6 +38,11 @@
     
     [super viewDidLoad];
 
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
     [self.view addSubview:self.tableView];
     self.isFirst = YES;
     
@@ -53,16 +59,13 @@
         }
         
         [self.tableView reloadData];
-        //调整占位图footer
+        // 调整占位图footer
         [self.ynPageScrollViewController reloadPlaceHoderViewFrame];
-        
         
     });
     
     __weak typeof (YNTestBaseViewController *)weakself = self;
     
-
-
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSInteger count = weakself.datasArrayM.count;
@@ -105,13 +108,12 @@
     }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header beginRefreshing];
-        
     });
 }
 
 
 
-- (void)viewDidLayoutSubviews{
+- (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
     

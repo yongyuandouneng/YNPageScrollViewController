@@ -16,8 +16,6 @@
 
     self.tableView.backgroundColor = [UIColor yellowColor];
     
-    
 }
-
 
 @end

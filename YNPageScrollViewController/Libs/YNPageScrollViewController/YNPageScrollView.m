@@ -8,16 +8,9 @@
 
 #import "YNPageScrollView.h"
 
-
-#define IPHONE_H [UIScreen mainScreen].bounds.size.height //屏幕的高度
-
-#define IPHONE_W [UIScreen mainScreen].bounds.size.width // 屏幕的宽度
-
-
 @implementation YNPageScrollView
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.gestureRecognizerShouldBegin = YES;
@@ -36,8 +29,7 @@
 
 - (BOOL)panBack:(UIGestureRecognizer *)gestureRecognizer {
     
-    //是滑动返回距左边的有效长度
-    int location_X = 0.15 * IPHONE_W;
+    int location_X = 0.15 * [UIScreen mainScreen].bounds.size.width;
     
     if (gestureRecognizer ==self.panGestureRecognizer) {
         UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;

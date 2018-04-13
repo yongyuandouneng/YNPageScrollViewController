@@ -10,10 +10,7 @@
 
 @implementation YNPageScrollHeaderView
 
-
-
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(YNPageScrollHeaderViewHitTest:)]) {
             [self.delegate YNPageScrollHeaderViewHitTest:!CGRectContainsPoint(self.frame, point)];
