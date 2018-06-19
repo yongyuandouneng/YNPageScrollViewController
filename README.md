@@ -1,31 +1,31 @@
 # YNPageScrollViewController
 
-###先上效果图
+### 先上效果图
 ---
 
-![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
-![screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
++[screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
++[screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
 
 第一张是集成在项目后的gif，喜欢就start鼓励一下，您在使用过程中有任何问题、出现任何(BUG、Crash)，请加QQ群538133294或联系我的扣扣1003580893.
 
-###优点
+### 优点
 ---
 * 控制器缓存、控制器生命周期无破坏、性能高
 * 菜单样式多样化、易拓展、易集成、易维护
 
-###支持Pod:
+### 支持Pod:
 ---
 pod 'YNPageScrollViewController'
 
 如果发现pod search YNPageScrollViewController 搜索出来的不是最新版本，需要在终端执行cd转换文件路径命令退回到desktop，然后执行pod setup命令更新本地spec缓存（可能需要几分钟），然后再搜索就可以了
 
-###版本更新:
+### 版本更新:
 ---
 1.0.2：
      修改悬浮式假数据高度、提供线条距离底部、宽度配置、修改其他BUG、修改了缓存机制、新增三个用来操作title和vc的Api。
 
 
-###怎么样使用呢？
+### 怎么样使用？
 ---
 
 一、统一使用配置信息类YNPageScrollViewMenuConfigration 创建YNPageScrollViewController控制器。控制器可以采用继承/直接使用/作为子类方式。
