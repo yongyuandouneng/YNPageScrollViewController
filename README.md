@@ -3,8 +3,8 @@
 ### 先上效果图
 ---
 
-+[screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif)
-+[screenshot] (https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif)
+<img src="https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/myProject.gif">
+<img src="https://github.com/yongyuandouneng/YNPageScrollViewController/blob/master/GifAndImage/Demo.gif">
 
 第一张是集成在项目后的gif，喜欢就start鼓励一下，您在使用过程中有任何问题、出现任何(BUG、Crash)，请加QQ群538133294或联系我的扣扣1003580893.
 
