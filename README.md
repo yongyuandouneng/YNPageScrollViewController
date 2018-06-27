@@ -1,5 +1,13 @@
 # YNPageScrollViewController
 
+### 请查看重构版
+[YNPageViewController](https://github.com/yongyuandouneng/YNPageViewController)
+### 请查看重构版
+[YNPageViewController](https://github.com/yongyuandouneng/YNPageViewController)
+### 请查看重构版
+[YNPageViewController](https://github.com/yongyuandouneng/YNPageViewController)
+
+
 ### 先上效果图
 ---
 
